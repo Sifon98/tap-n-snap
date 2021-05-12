@@ -1,1 +1,1 @@
-# sse-chat
+# Tap & Snap
