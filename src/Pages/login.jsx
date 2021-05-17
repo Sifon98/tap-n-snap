@@ -25,6 +25,9 @@ function login() {
 
       <button type="submit"
               className="btn">Submit</button>
+
+       <br />
+       <small>Don't have an account?<a href="#">Register</a></small>       
     </div>
   )
 }

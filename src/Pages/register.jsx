@@ -33,6 +33,9 @@ function register() {
             </div>
             <button type="submit"
                     className="btn">Register</button>
+
+                <br />
+             <small>Allready have an account?<a href="#">Login here</a></small>       
         </form>
       
     </div>
