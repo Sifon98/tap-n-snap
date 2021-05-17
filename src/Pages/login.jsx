@@ -1,27 +1,34 @@
 import React from 'react'
+import '../Components/CSS/login.css'
 
 function login() {
   return (
-    <div>
+    <div className="general">
         <form >
 
           <h1>Register</h1>
-            <div className="email">
-                <label htmlFor="inputEmail">Email adress</label> <br />
+            <div className="divar">
+                <label htmlFor="inputEmail"
+                       className="label">Email adress</label> <br />
                 <input type="email"
                        placeholder="Enter email"
+                       className="input"
                 />
             </div>
-            <div className="password">
-              <label htmlFor="inputpasword">Password</label>
+            <div className="divar">
+              <label htmlFor="inputpasword"
+                     className="label">Password</label> <br/>
               <input type="password"
                      placeholder="Password"
+                     className="input"
               />                              
             </div>
-            <div>
-              <label htmlFor="inputPasswordConfirmation">Confirm Password</label>
+            <div className="divar">
+              <label htmlFor="inputPasswordConfirmation"
+                     className="label">Confirm</label> <br />
               <input type="password"
                      placeholder="Confirm password"
+                     className="input"
               />
             </div>
             <button type="submit"
