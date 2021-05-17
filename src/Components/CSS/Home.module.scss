@@ -1,0 +1,22 @@
+.searchBar {
+    margin-left: 25%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 1px solid gray;
+    border-radius: 20px;
+    // padding-left: 2px;
+
+
+}
+
+input[type='text']::placeholder {   
+    text-align: left;
+    
+}
+
+.images {
+    height:30%;
+    width:100%;
+}
+
+

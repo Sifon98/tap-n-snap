@@ -6,6 +6,8 @@ import Style from '../Components/CSS/profile.module.scss'
 function Profile() {
     const backBtn = true;
     const profileBtn = false;
+    const cameraBtn = true;
+    const imageBtn = true;
 
     return (
         <div>
@@ -32,7 +34,7 @@ function Profile() {
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
             </div>
-            <Footer/>
+            <Footer cameraBtn={cameraBtn} imageBtn={imageBtn}/>
         </div>
     )
 }
