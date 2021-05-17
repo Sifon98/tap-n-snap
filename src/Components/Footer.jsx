@@ -1,25 +1,20 @@
 import React from 'react'
-import styled from 'styled-components'
+import Style from './CSS/footer.module.scss'
+
 
 const Footer = () => {
     return (
-        <Wrapper>
-            Footer
+        <div className={Style.footer}>
             
-            <i class="fas fa-camera"></i>
-            <i class="fas fa-mage"></i>
+            <i className="cameraIcon fas fa-camera"></i>
+            <i className="imageIcon fas fa-image"></i>
             
-        </Wrapper>
+        </div>
     )
 }
 
 export default Footer
 
-const Wrapper = styled.div`
-background-color: D100F3;
-height: 200px;
-width: 200px;
 
-`
 
 
