@@ -1,8 +1,7 @@
 import React from 'react'
 import './App.css'
-import Navbar from './Components/Navbar'
-import Footer from './Components/Footer'
 import Home from './Pages/Home'
+import Profile from './Pages/Profile'
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,8 +14,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path='/' component={Home}/>
-          
+          <Route path='/' exact component={Home}/>
+          <Route path='/profile' component={Profile}/>
         </Switch>
       </Router>
     </div>
