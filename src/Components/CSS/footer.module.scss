@@ -1,0 +1,7 @@
+$colorGradientReverse: linear-gradient(180deg, rgba(180,0,243,1) 0%, rgba(209,0,243,1) 100%);
+
+.footer {
+    background: $colorGradientReverse;
+    width: 100vb;
+    height: 10vh;
+}
