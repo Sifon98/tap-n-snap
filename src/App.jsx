@@ -1,6 +1,8 @@
 import React from 'react'
 import './App.css'
 import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
+import Home from './Pages/Home'
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,7 +15,8 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path='/' component={Navbar}/>
+          <Route path='/' component={Home}/>
+          
         </Switch>
       </Router>
     </div>
