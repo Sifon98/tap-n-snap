@@ -3,9 +3,12 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 
 function Home() {
+    const backBtn = false;
+    const profileBtn = true;
+
     return (
         <div>
-            <Navbar/>
+            <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <Footer/>
             
         </div>
