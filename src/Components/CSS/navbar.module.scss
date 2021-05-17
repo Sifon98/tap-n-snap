@@ -1,5 +1,7 @@
-$myColor: red;
+$colorGradiant: linear-gradient(180deg, rgba(209,0,243,1) 0%, rgba(180,0,243,1) 100%);
 
-.header {
-  color: $myColor;
+.navbar {
+  width: 100%;
+  height: 85px;
+  background: $colorGradiant;
 }
