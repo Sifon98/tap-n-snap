@@ -1,6 +1,8 @@
 import React from 'react'
 import Style from './CSS/Navbar.module.scss'
 import Logo from '../img/logo.png'
+import { Link } from 'react-router-dom'
+
 var back = "";
 var profile = "";
 
@@ -11,7 +13,6 @@ function Navbar({ backBtn, profileBtn }) {
     else 
         back = ""
     
-
     if (profileBtn == true)
         profile = <i className="fas fa-user fa-2x"></i>
     else 
@@ -19,9 +20,9 @@ function Navbar({ backBtn, profileBtn }) {
     
     return (
         <div className={Style.navbar}>
-            <a className={Style.left} href="/">{back}</a>
+            <Link className={Style.left} to="/">{back}</Link>
             <img src={Logo}></img>
-            <a className={Style.right} href="/">{profile}</a>
+            <Link className={Style.right} to="/profile">{profile}</Link>
         </div>
     )
 }
