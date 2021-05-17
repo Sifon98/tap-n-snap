@@ -5,7 +5,8 @@ function Searchbar() {
     return (
         <div>
             <h1>Search</h1>
-            <input className="search-bar">Search...</input>
+            <input className="searchBar" placeholder ="Search..."></input>
+            <button className ="searchBarButton">Search</button>
         </div>
     )
 }
