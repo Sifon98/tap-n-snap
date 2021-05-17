@@ -11,7 +11,8 @@
 }
 .label{
     margin-bottom: 25px;
-    padding-right: 90px;
+    padding-right: 80px;
+    letter-spacing: 0.5px;
 }
 .input{
     height: 25px;
