@@ -1,6 +1,7 @@
 import React from 'react'
 import './App.css'
 import Navbar from './Components/Navbar'
+import Searchbar from './Components/Searchbar'
 import Footer from './Components/Footer'
 import Home from './Pages/Home'
 import {
@@ -15,8 +16,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path='/' component={Home}/>
-          
+          <Route path='/' exact component={Home}/>
         </Switch>
       </Router>
     </div>
