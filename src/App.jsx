@@ -1,5 +1,6 @@
 import React from 'react'
-import './App.css'
+// import './App.css'
+import './Components/CSS/home.module.scss'
 import Navbar from './Components/Navbar'
 import Searchbar from './Components/Searchbar'
 import Footer from './Components/Footer'
