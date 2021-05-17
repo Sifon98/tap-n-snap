@@ -6,12 +6,15 @@ import Searchbar from '../Components/Searchbar'
 function Home() {
     const backBtn = false;
     const profileBtn = true;
+    const cameraBtn = true;
+    const imageBtn = true;
+
 
     return (
         <div>
             <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <Searchbar />
-            <Footer/>
+            <Footer cameraBtn={cameraBtn} imageBtn={imageBtn}/>
             
         </div>
     )
