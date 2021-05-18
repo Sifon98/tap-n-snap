@@ -1,30 +1,27 @@
-.general{
-    margin: 50px;
-    padding: 20px;
+*{
     text-align: center;
-    width: 60%;
-    height: 500px;
-    border: 1px solid rgb(184, 194, 182);
+    background-image: url("/src/img/Component_4.png");
+    background-size: 130%;
+    background-position-x: -35px ;
+    /* background: url("/src/img/Component_4.png") no-repeat center fixed; */
 }
+
 .divar{
-    margin: 20px;    
+    margin: 30px;
 }
-.label{
-    margin-bottom: 25px;
-    padding-right: 80px;
-    letter-spacing: 0.5px;
-}
-.input{
-    height: 25px;
-    width: 200px;
+.inputl{
+    background: white;
+    height: 30px;
+    border-radius: 5px;
+    text-align: start;
+    letter-spacing: 0.5pt;
 }
 .btn{
-    margin-top: 20px;
-    padding: 6px;
-    background-color: #D100F3;
-    color: rgb(229, 238, 238);
+    background: white;
     width: 100px;
-    height: 30px;
+    height: 40px;
     border-radius: 10px;
-
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }

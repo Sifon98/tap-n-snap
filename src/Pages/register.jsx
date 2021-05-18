@@ -1,42 +1,40 @@
 import React from 'react'
 import '../Components/CSS/register.css'
+import Navbar from '../Components/Navbar'
 
 function register() {
   return (
-    <div className="general">
-        <form >
+    <div >
 
-          <h1>Register</h1>
-            <div className="divar">
-                <label htmlFor="inputEmail"
-                       className="label">Email adress</label> <br />
-                <input type="email"
-                       placeholder="Enter email"
-                       className="input"
+       <Navbar />
+         <br />
+         <h1>Register</h1>
+              <div className="divar">               
+                     <input type="username"
+                            placeholder="Username..."
+                            className="inputl"
                 />
-            </div>
-            <div className="divar">
-              <label htmlFor="inputpasword"
-                     className="label">Password</label> <br/>
-              <input type="password"
-                     placeholder="Password"
-                     className="input"
-              />                              
-            </div>
-            <div className="divar">
-              <label htmlFor="inputPasswordConfirmation"
-                     className="label">Confirm</label> <br />
-              <input type="password"
-                     placeholder="Confirm password"
-                     className="input"
-              />
-            </div>
+              </div>
+              <div className="divar">
+                     <input type="password"
+                            placeholder="Password"
+                            className="inputl"
+                     />
+              </div>                                           
+              <div className="divar">
+                     <input type="email"
+                            placeholder="Email"
+                            className="inputl"
+                     />
+              </div>
+              
+            
             <button type="submit"
-                    className="btn">Register</button>
+                    className="btn">Create</button>
 
                 <br />
-             <small>Allready have an account?<a href="#">Login here</a></small>       
-        </form>
+             <small>Already have an account?<a href="#">Login here</a></small>       
+       
       
     </div>
   )

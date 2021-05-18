@@ -1,22 +1,21 @@
 import React from 'react'
 import '../Components/CSS/login.css'
+import Navbar from '../Components/Navbar'
 
 
 function login() {
   return (
     <div>
+      <Navbar />
+      <br />
       <h1>Login</h1>
-      <div className="divar">
-        <label htmlFor="inputEmail"
-               className="label">Email adress</label>
+      <div className="divarl">
                <input type="email"
-                      placeholder="Enter email"
+                      placeholder="Username..."
                       className="input"
                />
       </div>
-      <div className="divar">
-        <label htmlFor="inputpassword"
-               className="label">Password</label>
+      <div className="divarl">
         <input type="password"
                placeholder="Password"
                className="input"
@@ -24,7 +23,7 @@ function login() {
       </div>
 
       <button type="submit"
-              className="btn">Submit</button>
+              className="btnl">Login</button>
 
        <br />
        <small>Don't have an account?<a href="#">Register</a></small>       
