@@ -1,10 +1,9 @@
 import React from 'react'
-// import './App.css'
 import './Components/CSS/home.module.scss'
-import Navbar from './Components/Navbar'
 import Searchbar from './Components/Searchbar'
-import Footer from './Components/Footer'
+import './App.css'
 import Home from './Pages/Home'
+import Profile from './Pages/Profile'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,6 +17,7 @@ function App() {
       <Router>
         <Switch>
           <Route path='/' exact component={Home}/>
+          <Route path='/profile' component={Profile}/>
         </Switch>
       </Router>
     </div>
