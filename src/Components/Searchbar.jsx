@@ -14,7 +14,7 @@ function Searchbar() {
           ></input>
 
           <button type="submit" className={Style.submitButton}>
-            <i class="fa fa-search"></i>
+            <i className="fa fa-search"></i>
           </button>
         </form>
       </div>

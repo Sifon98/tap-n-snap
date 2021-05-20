@@ -1,6 +1,7 @@
 import React from 'react'
 import Style from './CSS/footer.module.scss'
 import ScrollButton from '../Components/ScrollButton'
+import { Link } from 'react-router-dom'
 
 var cameraIcon = "";
 var imageIcon = "";
@@ -23,7 +24,7 @@ const Footer = ({ cameraBtn, imageBtn }) => {
 
         <div className={Style.footer}>
             <div className={Style.iconContainer}>
-                <a className={Style.camera} href="/">{cameraIcon}</a>
+                <Link className={Style.camera} to="/camera">{cameraIcon}</Link>
                 <a className={Style.imageUpload} href="/">{imageIcon}</a>
             </div>
             <ScrollButton/>
