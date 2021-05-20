@@ -1,5 +1,5 @@
 import React from 'react'
-import '../Components/CSS/login.css'
+import Style from '../Components/CSS/login.module.scss'
 import Navbar from '../Components/Navbar'
 
 
@@ -10,13 +10,13 @@ function Login() {
       <Navbar />
       <br />
       <h1>Login</h1>
-      <div className="divarl">
+      <div className={Style.divarl}>
                <input type="email"
                       placeholder="Username..."
                       className="input"
                />
       </div>
-      <div className="divarl">
+      <div className={Style.divarl}>
         <input type="password"
                placeholder="Password"
                className="input"
@@ -24,7 +24,7 @@ function Login() {
       </div>
 
       <button type="submit"
-              className="btnl">Login</button>
+              className={Style.btnl}>Login</button>
 
        <br />
        <small>Don't have an account?<a href="#">Register</a></small>
