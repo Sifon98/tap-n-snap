@@ -3,9 +3,10 @@ import '../Components/CSS/login.css'
 import Navbar from '../Components/Navbar'
 
 
-function login() {
+function Login() {
   return (
-    <div>
+    <div >
+      
       <Navbar />
       <br />
       <h1>Login</h1>
@@ -26,9 +27,12 @@ function login() {
               className="btnl">Login</button>
 
        <br />
-       <small>Don't have an account?<a href="#">Register</a></small>       
+       <small>Don't have an account?<a href="#">Register</a></small>
+
+     
+             
     </div>
   )
 }
 
-export default login
+export default Login

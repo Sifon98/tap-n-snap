@@ -1,13 +1,9 @@
-*{
+.divr{
     text-align: center;
-    background-image: url("/src/img/Component_4.png");
+    /* background-image: url("/src/img/Component_4.png"); */
     background-size: 130%;
     background-position-x: -35px ;
-    /* background: url("/src/img/Component_4.png") no-repeat center fixed; */
-}
-
-.divar{
-    margin: 30px;
+    background: url("/src/img/Component_4.png") no-repeat center fixed;
 }
 .inputl{
     background: white;
@@ -15,6 +11,7 @@
     border-radius: 5px;
     text-align: start;
     letter-spacing: 0.5pt;
+    margin: 30px;
 }
 .btn{
     background: white;
