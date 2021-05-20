@@ -1,19 +1,29 @@
-import React from 'react'
-import Style from './CSS/home.module.scss'
-import TestImage from '../img/TestImage.jpg'
+import React from "react";
+import Style from "./CSS/home.module.scss";
+import TestImage from "../img/TestImage.jpg";
 
 function Searchbar() {
-    return (
-        <div>
-            <input type="text" className={Style.searchBar} placeholder ="Search..."></input>
-            <button className ={Style.searchBarButton}>Search</button>
+  return (
+    <div>
+      <div className={Style.formSection}>
+        <form>
+          <input
+            type="search"
+            className={Style.searchBar}
+            placeholder="Search for photos"
+          ></input>
 
-            <div className={Style.imgContainer}>
-                <img src={TestImage} className={Style.images}></img>
-            </div>
-        </div>
-    )
-    
+          <button type="submit" className={Style.submitButton}>
+            <i class="fa fa-search"></i>
+          </button>
+        </form>
+      </div>
+
+      <div className={Style.imgContainer}>
+        <img src={TestImage} className={Style.images}></img>
+      </div>
+    </div>
+  );
 }
 
-export default Searchbar
+export default Searchbar;
