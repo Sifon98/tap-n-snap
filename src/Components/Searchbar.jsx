@@ -1,6 +1,6 @@
-import React from "react";
-import Style from "./CSS/home.module.scss";
-import TestImage from "../img/TestImage.jpg";
+import React from 'react'
+import Style from './CSS/Home.module.scss'
+import TestImage from '../img/TestImage.jpg'
 
 function Searchbar() {
   return (
