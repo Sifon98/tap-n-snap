@@ -38,3 +38,30 @@ app.post('/api/upload', (req, res) => {
 app.use(express.static(__dirname + '/www'))
 
 app.listen(4000, () => console.log('Server started on http://localhost:4000'))
+=======
+const mongoose = require('mongoose')
+const cors = require('cors')
+
+const app = express()
+
+app.use(express.json())
+app.use(cors())
+
+const postRouter = require('./backend/routes/posts')
+app.use('/posts', postRouter)
+
+
+function broadcast(data) {
+  for (let res in connections) {
+    res.write('data:' + JSON.stringify(data) + '\n\n')
+  }
+}
+
+// Connect to DB
+mongoose.connect(
+  'mongodb+srv://admin:pa55w0rd@cluster0.cmulc.mongodb.net/Cluster0?retryWrites=true&w=majority',
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => { console.log('DB connected') }
+)
+
+app.listen(4000, () => console.log('server started on port 4000'))

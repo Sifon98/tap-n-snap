@@ -1,7 +1,26 @@
 $colorGradiant: linear-gradient(180deg, rgba(209,0,243,1) 0%, rgba(180,0,243,1) 100%);
+$iconColor: white;
 
 .navbar {
   width: 100%;
   height: 85px;
   background: $colorGradiant;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+
+    .left {
+      position: fixed;
+      left: 0;
+      color: $iconColor;
+      margin: 20px;
+    }
+
+    .right {
+      position: fixed;
+      right: 0;
+      color: $iconColor;
+      margin: 20px;
+    }
 }
