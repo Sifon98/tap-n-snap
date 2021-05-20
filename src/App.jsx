@@ -7,6 +7,8 @@ import Profile from './Pages/Profile'
 import login from './Pages/Login'
 import register from './Pages/Register'
 import start from './Pages/Start'
+import camera from './Pages/CameraPage'
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -24,6 +26,7 @@ function App() {
           <Route path='/login' component={login}/>
           <Route path='/register' component={register}/>
           <Route path='/start' component={start}/>
+          <Route path='/camera' component={camera}/>
         </Switch>
       </Router>
     </div>
