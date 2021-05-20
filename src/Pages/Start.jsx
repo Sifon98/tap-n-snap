@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
-import '../Components/CSS/start.css'
+import styles from '../Components/CSS/start.module.scss'
 
 function Start() {
   return (
     <div>
-        <div className="div">
+        <div className={styles.div}>
             <Navbar />
 
             <br />
