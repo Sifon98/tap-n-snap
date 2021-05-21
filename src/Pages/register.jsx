@@ -1,10 +1,10 @@
-import React from 'react'
-import '../Components/CSS/register.css'
+import React  from 'react'
+import Style  from '../Components/CSS/register.module.scss'
 import Navbar from '../Components/Navbar'
 
 function Register() {
   return (
-    <div className="divr">
+    <div className={Style.divr}>
 
        <Navbar />
          <br />
@@ -12,22 +12,22 @@ function Register() {
                             
               <input type="username"
                      placeholder="Username..."
-                     className="inputl"
+                     className={Style.inputr}
               />              
               <br />        
               <input type="password"
                      placeholder="Password"
-                     className="inputl"
+                     className={Style.inputr}
               />                  
                <br />        
 
               <input type="email"
                      placeholder="Email"
-                     className="inputl"
+                     className={Style.inputr}
               />              
               <br />           
               <button type="submit"
-                    className="btn">Create</button>
+                      className={Style.btn}>Create</button>
 
                 <br />
               <small>Already have an account?<a href="#">Login here</a></small>             

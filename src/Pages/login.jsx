@@ -13,13 +13,13 @@ function Login() {
       <div className={Style.divarl}>
                <input type="email"
                       placeholder="Username..."
-                      className="input"
+                      className={Style.input}
                />
       </div>
       <div className={Style.divarl}>
         <input type="password"
                placeholder="Password"
-               className="input"
+               className={Style.input}
         />
       </div>
 
@@ -27,10 +27,7 @@ function Login() {
               className={Style.btnl}>Login</button>
 
        <br />
-       <small>Don't have an account?<a href="#">Register</a></small>
-
-     
-             
+       <small>Don't have an account?<a href="#">Register</a></small>            
     </div>
   )
 }
