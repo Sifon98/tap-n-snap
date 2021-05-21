@@ -12,7 +12,7 @@ function Login() {
         <div className={styles.divarl}>
                  <input type="email"
                         placeholder="Username..."
-                        className={styles.input}
+                        className="input"
                  />
         </div>
         <div className={styles.divarl}>
