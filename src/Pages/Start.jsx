@@ -1,11 +1,11 @@
 import React  from 'react'
 import Navbar from '../Components/Navbar'
-import Style  from '../Components/CSS/start.module.scss'
+import styles from '../Components/CSS/start.module.scss'
 
 function Start() {
   return (
     <div>
-       
+        <div className={styles.div}>
             <Navbar />
 
             <br />
@@ -16,9 +16,7 @@ function Start() {
                     
 
             <button type="submit"
-                    className={Style.btns}>Register</button>
-                    
-              
+                    className={Style.btns}>Register</button>              
     </div>
   )
 }
