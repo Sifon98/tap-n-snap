@@ -5,9 +5,9 @@ import Searchbar from '../Components/Searchbar'
 
 function Home() {
     const backBtn = false;
-    const profileBtn = true;
-    const cameraBtn = true;
-    const imageBtn = true;
+    const profileBtn = false;
+    const cameraBtn = false;
+    const imageBtn = false;
 
 
     return (

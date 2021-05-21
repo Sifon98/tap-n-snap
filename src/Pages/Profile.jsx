@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Style from '../Components/CSS/profile.module.scss'
@@ -9,30 +9,34 @@ function Profile() {
     const cameraBtn = true;
     const imageBtn = true;
 
+    const [newPosts, setNewPosts] = useState([]); // -------------------------------- POSTS
+
+    const getImageHandler = async () => {
+        const res = await fetch('http://localhost:4000/posts');
+        const data = await res.json();
+
+        console.log(data);
+
+        setNewPosts(data);
+    } 
+
+    useEffect(() => getImageHandler(), [])
+
     return (
         <div>
             <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <div className={Style.wrapper}>
-                <div className={Style.profileInfo}>
-                    <h1>JOHN DOE</h1>
-                    <p>johndoe@gmail.com</p>
-                </div>
-                <i className="fas fa-cog fa-4x"></i>
+                
             </div>
             <hr/>
             <div className={Style.imgWrapper}>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
-                <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
+            {
+                newPosts.map(post => (
+                    <div>
+                        <img className={Style.images} src={post.url} alt={post.tags.join(' ')} />
+                    </div>
+                ))
+            }
             </div>
             <Footer cameraBtn={cameraBtn} imageBtn={imageBtn}/>
         </div>

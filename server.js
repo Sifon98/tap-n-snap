@@ -1,4 +1,4 @@
-const express = require('express')
+/*const express = require('express')
 const formidable = require('formidable')
 const fs = require('fs')
 
@@ -38,7 +38,8 @@ app.post('/api/upload', (req, res) => {
 app.use(express.static(__dirname + '/www'))
 
 app.listen(4000, () => console.log('Server started on http://localhost:4000'))
-=======
+*/
+const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 

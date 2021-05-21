@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const posts = await Post.find()
     res.send(posts)
   } catch (error) {
-    res.send({ message: error })
+    res.send({ description: error })
   }
 })
 
@@ -18,7 +18,7 @@ router.get('/:postId', async (req, res) => {
     const post = await Post.findById(req.params.postId)
     res.send(post)
   } catch (error) {
-    res.send({ message: error })
+    res.send({ description: error })
   }
 })
 
@@ -27,14 +27,14 @@ router.post('/', async (req, res) => {
   const post = new Post({
     // image: req.body.image,
     user: req.body.user,
-    message: req.body.message,
+    description: req.body.description,
     tags: req.body.tags
   })
 
   try {
     res.send(post.save())
   } catch (error) {
-    res.send({ message: error })
+    res.send({ description: error })
   }
 })
 
@@ -45,14 +45,14 @@ router.patch('/:postId', async (req, res) => {
       { _id: req.params.postId },
       { $set: {
           user: req.body.user,
-          message: req.body.message,
+          description: req.body.description,
           tags: req.body.tags
         } 
       }
     )
     res.send(updatedPost)
   } catch (error) {
-    res.send({ message: error })
+    res.send({ description: error })
   }
 })
 
@@ -64,7 +64,7 @@ router.delete('/:postId', async (req, res) => {
     )
     res.send(deletePost)
   } catch (error) {
-    res.send({ message: error })
+    res.send({ description: error })
   }
 })
 

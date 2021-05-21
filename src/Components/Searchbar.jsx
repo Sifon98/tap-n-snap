@@ -1,26 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Style from './CSS/Home.module.scss'
 import TestImage from '../img/TestImage.jpg'
 
 function Searchbar() {
-  return (
+
+  const [newPosts, setNewPosts] = useState([]); // -------------------------------- POSTS
+
+    const getImageHandler = async () => {
+        const res = await fetch('http://localhost:4000/posts');
+        const data = await res.json();
+
+        console.log(data);
+
+        setNewPosts(data);
+    }
+
+    useEffect(() => getImageHandler(), [])
+
+  return ( 
     <div>
-      <div className={Style.formSection}>
-        <form>
-          <input
-            type="search"
-            className={Style.searchBar}
-            placeholder="Search for photos"
-          ></input>
-
-          <button type="submit" className={Style.submitButton}>
-            <i className="fa fa-search"></i>
-          </button>
-        </form>
-      </div>
-
-      <div className={Style.imgContainer}>
-        <img src={TestImage} className={Style.images}></img>
+      <div className={Style.padding}>
+      {
+        newPosts.map(post => (
+            <div>
+                <img className={Style.images} src={post.url} alt={post.tags.join(' ')} />
+            </div>
+        ))
+      }
       </div>
     </div>
   );

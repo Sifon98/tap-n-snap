@@ -24,7 +24,7 @@ const Footer = ({ cameraBtn, imageBtn }) => {
 
         <div className={Style.footer}>
             <div className={Style.iconContainer}>
-                <Link className={Style.camera} to="/camera">{cameraIcon}</Link>
+                <Link className={Style.camera} to="/">{cameraIcon}</Link>
                 <a className={Style.imageUpload} href="/">{imageIcon}</a>
             </div>
             <ScrollButton/>
