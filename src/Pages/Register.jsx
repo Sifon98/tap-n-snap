@@ -1,36 +1,36 @@
 import React from 'react'
-import styles from '../Components/CSS/register.module.scss'
+import Style from '../Components/CSS/register.module.scss'
 import Navbar from '../Components/Navbar'
 
 function Register() {
   return (
     <div>
+           <br />
        <Navbar />
-       <div className={styles.divr}>
-         <h1>Register</h1>
-                            
-              <input type="username"
-                     placeholder="Username..."
-                     className={styles.inputr1}
-              />              
-              <br />        
-              <input type="password"
-                     placeholder="Password"
-                     className={styles.inputr}
-              />                  
-               <br />        
+       <input type="username"
+               placeholder="Username..."
+               className={Style.inputr1} />
+               <br />
+        <input type="email"
+               placeholder="Email..."
+               className={Style.inputr} />       
+               <br />
+        <input type="password"
+               placeholder="Password..."
+               className={Style.inputr} />
+               <br />
+        <input type="password"
+               placeholder="Confirm Password..."
+               className={Style.inputr} />
+               <br />
 
-              <input type="email"
-                     placeholder="Email"
-                     className={styles.inputr}
-              />              
-              <br />           
-              <button type="submit"
-                    className={styles.btn}>Create</button>
+        <button type="submit"
+                className={Style.btn}>SIGN UP</button> 
 
-                <br />
-              <small>Already have an account?<a href="#">Login here</a></small>             
-        </div>
+              <br />
+        <small>Already have an account?    <a href="#">Login here</a></small>   
+       
+
     </div>
   )
 }
