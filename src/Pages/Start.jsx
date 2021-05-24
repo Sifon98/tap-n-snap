@@ -1,19 +1,22 @@
-import React from 'react'
+import React  from 'react'
 import Navbar from '../Components/Navbar'
-import styles from '../Components/CSS/start.module.scss'
+import Style from '../Components/CSS/start.module.scss'
 
 function Start() {
   return (
     <div>
-        <div className={styles.div}>
-            <Navbar />
+        <Navbar />
 
+        <div className={Style.start}>
+            
             <br />
-            <button type="submit">Login</button>
-
-            <button type="submit">Register</button>
-
-        </div>      
+            <button type="submit"
+                    className={Style.btnsl}>Login</button>
+            <br/>
+        
+            <button type="submit"
+                    className={Style.btns}>Register</button> 
+        </div>             
     </div>
   )
 }

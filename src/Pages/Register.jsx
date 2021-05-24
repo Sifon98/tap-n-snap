@@ -11,18 +11,18 @@ function Register() {
                             
               <input type="username"
                      placeholder="Username..."
-                     className={styles.inputl}
+                     className={styles.inputr}
               />              
               <br />        
               <input type="password"
                      placeholder="Password"
-                     className={styles.inputl}
+                     className={styles.inputr}
               />                  
                <br />        
 
               <input type="email"
                      placeholder="Email"
-                     className={styles.inputl}
+                     className={styles.inputr}
               />              
               <br />           
               <button type="submit"
