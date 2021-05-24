@@ -1,4 +1,3 @@
-const mongoose = require('mongoose')
 const [fs, path] = [require('fs'), require('path')];
 const { Schema, model } = require('mongoose');
 

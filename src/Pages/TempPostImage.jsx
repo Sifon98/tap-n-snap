@@ -1,30 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import { useStates, useNamedContext } from 'react-easier';
-// import { Posts } from '../../backend/models/Post'
+import React, { useState } from 'react'
 
 function TempPostImage() {
     
-    // const [image, setImage] = useState('');
+    // State for Post data
     const [imageData, setImageData] = useState('');
     const [desc, setDesc] = useState('');
     const [tags, setTags] = useState([]);
 
-
-    /*const postImageHandler = (imageData, desc, tags) => {
-        fetch("http://localhost:4000/posts", {
-            method: "post",
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                url: imageData,
-                user: "User123",
-                description: desc,
-                tags: tags
-            })
-        })
-    }*/
+    // State for fetched Post objects
+    const [newPosts, setNewPosts] = useState([]); 
 
     const photoChosen = () => {
         let file = document.forms.textForm.file.files[0];
@@ -66,27 +50,16 @@ function TempPostImage() {
                 tags: tags
             })
         })
-        //await photo.save();
     }
-
-    const [newPosts, setNewPosts] = useState([]); 
 
     const getImageHandler = async () => {
         const res = await fetch('http://localhost:4000/posts');
         const data = await res.json();
 
         console.log(data);
-
         setNewPosts(data);
     }
 
-    /*
-    (2) [{…}, {…}]
-        0: {url: "http://www.rspcasa.org.au/wp-content/uploads/2019/01/Adopt-a-cat-or-kitten-from-RSPCA.jpg", tags: Array(2), _id: "60a788cb3f2b7559e463ab06", user: "User123", description: "hejsan", …}
-        1: {url: "https://i.imgur.com/W3z3fcL.jpg", tags: Array(2), _id: "60a78ac1d61d803c18bda255", user: "User123", description: "testar", …}
-        length: 2
-        __proto__: Array(0)
-    */
     return (
         <div>
             <h2>Send post</h2>
@@ -101,22 +74,24 @@ function TempPostImage() {
                 <input type="submit" value="Send" />
 
             </form>
-
-            {/* <h2>Upload photo</h2>
-            <form name="photoUpload" onSubmit={uploadPhoto}>
-            
-            </form>
-            <hr /> */}
             
             <div>
                 <h3>Fetch posts</h3>
                 <button onClick={getImageHandler}>Fetch new posts</button>
                 {
                     newPosts.map(post => (
-                        <div>
-                            <img src={'../../public/uploads/' + post.url} alt={post.tags.join(' ')} />
+                        <div key={post['_id']} style={{ 
+                            border: '2px solid #BBB', 
+                            margin: '5px',
+                            padding: '10px'
+                            }}>
+                            <img 
+                                src={'/uploads/' + post.url} 
+                                alt={post.tags.join(' ')} 
+                                style={{ width: '100%' }}/>
                             <p>User: {post.user}</p>
                             <p>{post.description}</p>
+                            <p>{post.tags.map(tag => '#' + tag).join(' ')}</p>
                         </div>
                     ))
                 }
