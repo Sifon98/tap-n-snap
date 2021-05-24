@@ -11,7 +11,7 @@ function Register() {
                             
               <input type="username"
                      placeholder="Username..."
-                     className={styles.inputr}
+                     className={styles.inputr1}
               />              
               <br />        
               <input type="password"
