@@ -8,7 +8,8 @@ import login from './Pages/Login'
 import register from './Pages/Register'
 import start from './Pages/Start'
 import camera from './Pages/CameraPage'
-import PostImage from './Pages/TempPostImage'
+// import PostImage from './Pages/TempPostImage'
+import CreatePost from './Pages/CreatePost'
 
 import {
   BrowserRouter as Router,
@@ -28,7 +29,7 @@ function App() {
           <Route path='/register' component={register}/>
           <Route path='/start' component={start}/>
           <Route path='/camera' component={camera}/>
-          <Route path='/PostImage' component={PostImage}/>
+          <Route path='/createPost' component={CreatePost}/>
         </Switch>
       </Router>
     </div>

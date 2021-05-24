@@ -23,4 +23,8 @@ $iconColor: white;
       color: $iconColor;
       margin: 20px;
     }
+
+    & > img {
+      height: inherit;
+    }
 }
