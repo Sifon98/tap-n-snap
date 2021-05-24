@@ -5,18 +5,21 @@ import Style from '../Components/CSS/start.module.scss'
 function Start() {
   return (
     <div>
+      <br/>
         <Navbar />
 
-        <div className={Style.start}>
-            
-            <br />
-            <button type="submit"
-                    className={Style.btnsl}>Login</button>
-            <br/>
+        <div className={Style.body}>
+
         
             <button type="submit"
-                    className={Style.btns}>Register</button> 
-        </div>             
+                    className={Style.btnsl}>Login</button>
+
+                    <br />
+
+            <button type="submit"
+                    className={Style.btnsl}>Register</button>
+
+        </div>            
     </div>
   )
 }
