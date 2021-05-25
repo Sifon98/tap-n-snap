@@ -1,33 +1,78 @@
+$fontFamily: 'Arvo', serif;
+$fontSize: 16px;
+
 .createPost {
-    position: relative;
-    height: 100vh;
-    padding: 0 2rem;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
-    & > .backArrow {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-    }
-
-    & > form {
-        height: 100%;
-
+    .wrapper {
+        background-color: #30373D;
+        height: 200px;
+        width: 92%;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
 
-        & > * {
-            font-size: 16px;
-            color: #fff;
-            width: 100%;
-            padding: 1rem;
-            margin: 1rem 0;
+        img {
+            max-height: 200px;
+            max-width: 175px;
         }
 
-        & > input[type="submit"] {
-            cursor: pointer;
+        .tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            input {
+                color: white;
+                font-family: $fontFamily;
+                outline: none;
+                width: 85%;
+                font-size: 16px;
+                background-color: #30373d00 !important;
+                border: none;
+                border-bottom: 2px solid grey;
+            }
         }
     }
 
+    form {
+        margin-top: 70px;
+        height: 200px;
+        width: 92%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        button, .inputButton {
+            font-family: $fontFamily;
+            font-size: $fontSize;
+            width: 200px;
+            height: 50px;
+            border-radius: 100px;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+          
+        input[type=file]::file-selector-button {
+            padding: .2em .4em;
+            border-radius: 100px;
+            color: black;
+            font-family: $fontFamily;
+            font-size: $fontSize;
+            width: 200px;
+            height: 50px;
+            border-radius: 100px;
+            border: none;
+            margin-left: 53px;
+        }
+
+        input[type=file] {
+            color: #21262E;
+        }
+    }
 }

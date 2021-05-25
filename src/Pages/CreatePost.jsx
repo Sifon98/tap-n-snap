@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import styles from '../Components/CSS/createPost.module.scss';
+import Style from '../Components/CSS/createPost.module.scss';
 
 const CreatePost = () => {
     
@@ -45,19 +45,20 @@ const CreatePost = () => {
     }
 
     return (
-        <div className={styles.createPost}>
-            <Link className={styles.backArrow} to="/">
-                <i className="fas fa-arrow-left fa-3x"></i>
-            </Link>
-            <form name="textForm" onSubmit={uploadPhoto}> 
-                <input type="text" placeholder="Description" onChange={e => { setDesc(e.target.value)} } />
-                <input type="text" placeholder="Space seperated tags" onChange={e => { setTags(e.target.value.split(" "))} } />
-                
-                <input name="file" type="file"
-                    accept="image/*" onChange={photoChosen} />
-                {imageData && <img src={imageData} width="300" />}
+        <div className={Style.createPost}>
 
-                <input type="submit" value="Send" />
+            <div className={Style.wrapper}>
+                {imageData && <img src={imageData} width="175" />}
+                <div className={Style.tags}>
+                    <input type="text" placeholder="Tags..." onChange={e => { setTags(e.target.value.split(" "))} } />
+                    <p>{tags}</p>
+                </div>
+            </div>
+
+            <form name="textForm" onSubmit={uploadPhoto}> 
+                <input name="file" type="file" accept="image/*" onChange={photoChosen} />
+                <button>TAKE PHOTO<i className="fas fa-camera fa-2x"></i></button>
+                <input type="submit" value="SEND" className={Style.inputButton} />
             </form>
         </div>
     )
