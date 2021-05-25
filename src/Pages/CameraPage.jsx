@@ -1,13 +1,46 @@
 import React from 'react'
-import CameraComponent from '../Components/CameraComponent'
+import Webcam from "react-webcam";
 
+const videoConstraints = {
+  width: 400,
+  height: 400,
+  facingMode: "user"
+};
 
-function CameraPage() {
-    return (
-        <div>
-           <CameraComponent /> 
-        </div>
-    )
-}
+  const CameraPage = () => {
+  const webcamRef = React.useRef(null);
+  const [imgSrc, setImgSrc] = React.useState(null);
 
-export default CameraPage
+  const capture = React.useCallback(() => {
+    const imageSrc = webcamRef.current.getScreenshot();
+    setImgSrc(imageSrc);
+  }, [webcamRef, setImgSrc]);
+
+  return (
+    <>
+      <div className="cameraDiv">
+
+        <Webcam
+          mirrored={true}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg/jpg"
+          videoConstraints={videoConstraints}
+          audio={false}
+        />
+      </div>
+
+      <div className="buttonDiv">
+        <button className="cameraButton" onClick={capture}>Take photo</button>
+      </div>
+      
+      <br></br>
+      {imgSrc && (
+        <img className="previewImage"
+          src={imgSrc}
+        />
+      )}
+    </>
+  );
+};
+
+export default CameraPage;
