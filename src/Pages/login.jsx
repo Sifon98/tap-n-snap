@@ -9,9 +9,10 @@ function Login() {
 
           <br />
       <Navbar />
+      <img src="../img/user.png"/>
       <input type="email"
-                        placeholder="Username..."
-                        className={Style.inputl}
+             placeholder="Username..."
+             className={Style.inputl}
                  />
           <br />
         <input type="password"
