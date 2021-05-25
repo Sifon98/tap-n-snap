@@ -6,13 +6,15 @@ function Start() {
   return (
     <div>
       <br/>
+      <br/>
+      <br/>
         <Navbar />
 
         <div className={Style.body}>
 
         
             <button type="submit"
-                    className={Style.btnsl}>Login</button>
+                    className={Style.btnslo}>Login</button>
 
                     <br />
 

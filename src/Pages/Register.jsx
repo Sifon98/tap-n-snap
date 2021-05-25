@@ -7,6 +7,7 @@ function Register() {
   return (
     <div>
            <br />
+           <br />
        <Navbar />
        <input type="username"
                placeholder="Username..."

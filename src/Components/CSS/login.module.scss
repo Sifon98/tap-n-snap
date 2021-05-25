@@ -1,22 +1,24 @@
 
 .inputl{
     margin-top: 200px;
-    background: #30373D;
+    background: #21262E;
     height: 40px;
     width: 280px;
-    border-radius: 5px;
-    border-bottom: 1px solid #A371F7;
+    border-style: none;
+    border-bottom: 3px solid #A371F7;
     text-align: start;
+    font-size: large;
     letter-spacing: 0.5pt;  
     color: beige;
 }
 .input{
-    background: #30373D;
+    background: #21262E;
     height: 40px;
     width: 280px;
-    border-radius: 5px;
-    border-bottom: 1px solid #A371F7;
+    border-style: none;
+    border-bottom: 3px solid #A371F7;
     text-align: start;
+    font-size: large;
     letter-spacing: 0.5pt;  
     margin: 50px;
     //margin-top: 60px;
@@ -28,7 +30,7 @@
     width: 160px;
     border-radius: 30px;
     margin-top: 40px;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
 }
 small{
     color: beige;

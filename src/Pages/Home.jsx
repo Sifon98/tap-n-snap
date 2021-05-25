@@ -12,6 +12,8 @@ function Home() {
 
     return (
         <div>
+            <br />
+            <br />
             <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <Searchbar />
             <Footer cameraBtn={cameraBtn} imageBtn={imageBtn}/>
