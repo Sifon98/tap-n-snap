@@ -1,4 +1,4 @@
-const express = require('express')
+/*const express = require('express')
 const formidable = require('formidable')
 const fs = require('fs')
 
@@ -38,7 +38,9 @@ app.post('/api/upload', (req, res) => {
 app.use(express.static(__dirname + '/www'))
 
 app.listen(4000, () => console.log('Server started on http://localhost:4000'))
-=======
+*/
+
+const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 
@@ -51,11 +53,11 @@ const postRouter = require('./backend/routes/posts')
 app.use('/posts', postRouter)
 
 
-function broadcast(data) {
-  for (let res in connections) {
-    res.write('data:' + JSON.stringify(data) + '\n\n')
-  }
-}
+// function broadcast(data) {
+//   for (let res in connections) {
+//     res.write('data:' + JSON.stringify(data) + '\n\n')
+//   }
+// }
 
 // Connect to DB
 mongoose.connect(
@@ -65,3 +67,28 @@ mongoose.connect(
 )
 
 app.listen(4000, () => console.log('server started on port 4000'))
+
+/*
+// Require and setup mongoosy
+const { app } = require('mongoosy')({
+  query: {
+    route: '/api/posts'
+  },
+  expressJson: {
+    limit: '100mb'
+  },
+  connect: {
+    url: 'mongodb+srv://admin:pa55w0rd@cluster0.cmulc.mongodb.net/Cluster0?retryWrites=true&w=majority'
+  },
+  // Please change the salt before creating any users
+  login: {
+    encryptionSalt: 'unique and hard to guess'
+  }
+});
+
+// Add logic to handle SSE (Server Sent Events)
+// require('./SSE-handler')(app);
+
+// Start the Express web server
+app.listen(4000, () =>
+  console.log('Backend running!')); */

@@ -25,9 +25,9 @@ router.get('/:postId', async (req, res) => {
 // Create post
 router.post('/', async (req, res) => {
   const post = new Post({
-    // image: req.body.image,
+    url: req.body.url,
     user: req.body.user,
-    message: req.body.message,
+    description: req.body.description,
     tags: req.body.tags
   })
 
@@ -45,7 +45,7 @@ router.patch('/:postId', async (req, res) => {
       { _id: req.params.postId },
       { $set: {
           user: req.body.user,
-          message: req.body.message,
+          description: req.body.description,
           tags: req.body.tags
         } 
       }

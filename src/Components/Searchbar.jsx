@@ -18,10 +18,6 @@ function Searchbar() {
           </button>
         </form>
       </div>
-
-      <div className={Style.imgContainer}>
-        <img src={TestImage} className={Style.images}></img>
-      </div>
     </div>
   );
 }

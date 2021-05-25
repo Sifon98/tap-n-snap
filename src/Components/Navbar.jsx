@@ -21,7 +21,7 @@ function Navbar({ backBtn, profileBtn }) {
     return (
         <div className={Style.navbar}>
             <Link className={Style.left} to="/">{back}</Link>
-            <img src={Logo}></img>
+            <img src={Logo} alt="logo"/>
             <Link className={Style.right} to="/profile">{profile}</Link>
         </div>
     )
