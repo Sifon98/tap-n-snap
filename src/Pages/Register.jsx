@@ -1,6 +1,7 @@
 import React from 'react'
 import Style from '../Components/CSS/register.module.scss'
 import Navbar from '../Components/Navbar'
+import { Link } from 'react-router-dom'
 
 function Register() {
   return (
@@ -28,7 +29,7 @@ function Register() {
                 className={Style.btn}>SIGN UP</button> 
 
               <br />
-        <small>Already have an account?    <a href="#">Login here</a></small>   
+        <small>Already have an account?</small>     <Link className={Style.a}  to='/login'>Login here</Link>  
        
 
     </div>
