@@ -40,6 +40,8 @@ const CreatePost = () => {
                 tags: tags
             })
         })
+
+        console.log('Photo uploaded!');
     }
 
     return (
