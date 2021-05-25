@@ -37,8 +37,8 @@ app.post('/api/upload', (req, res) => {
 // serve /www folder to let clients read from uploads
 app.use(express.static(__dirname + '/www'))
 
-app.listen(4000, () => console.log('Server started on http://localhost:4000'))
-=======
+app.listen(4000, () => {console.log('Server started on http://localhost:4000')})
+
 const mongoose = require('mongoose')
 const cors = require('cors')
 
