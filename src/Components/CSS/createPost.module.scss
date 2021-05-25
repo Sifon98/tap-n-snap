@@ -1,5 +1,7 @@
 $fontFamily: 'Arvo', serif;
 $fontSize: 16px;
+$darkAccent: #30373D;
+$backgroundColor: #21262E;
 
 .createPost {
     margin-top: 100px;
@@ -8,31 +10,64 @@ $fontSize: 16px;
     justify-content: center;
 
     .wrapper {
-        background-color: #30373D;
+        background-color: $darkAccent;
         height: 200px;
-        width: 92%;
+        width: 100%;
         display: flex;
         align-items: center;
 
         img {
             max-height: 200px;
             max-width: 175px;
+            width: auto;
         }
 
         .tags {
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             flex-wrap: wrap;
 
             input {
                 color: white;
                 font-family: $fontFamily;
                 outline: none;
-                width: 85%;
+                width: 60%;
                 font-size: 16px;
-                background-color: #30373d00 !important;
+                background-color: $darkAccent;
                 border: none;
                 border-bottom: 2px solid grey;
+            }
+
+            .icon {
+                border: none;
+                font-family: $fontFamily;
+                font-size: $fontSize;
+                width: 30px;
+                height: 30px;
+                border-radius: 100px;
+                color: $darkAccent;
+            }
+
+            .tagDiv {
+                display: flex;
+                flex-wrap: wrap;
+                width: 90%;
+
+                div {
+                    margin: 7px 5px 0px 0px;
+                    padding: 2px 10px 2px 10px;
+                    min-width: 50px;
+                    margin-block-start: none !important;
+                    margin-block-end: none !important;
+                    background-color: white;
+                    color: black;
+                    border-radius: 100px;
+                    text-align: center;
+
+                    i {
+                        color: grey;
+                    }
+                }
             }
         }
     }
@@ -46,7 +81,7 @@ $fontSize: 16px;
         justify-content: center;
         flex-wrap: wrap;
 
-        button, .inputButton {
+        .inputButton {
             font-family: $fontFamily;
             font-size: $fontSize;
             width: 200px;
@@ -56,12 +91,12 @@ $fontSize: 16px;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
+            color: $backgroundColor;
         }
           
         input[type=file]::file-selector-button {
             padding: .2em .4em;
             border-radius: 100px;
-            color: black;
             font-family: $fontFamily;
             font-size: $fontSize;
             width: 200px;
@@ -69,10 +104,11 @@ $fontSize: 16px;
             border-radius: 100px;
             border: none;
             margin-left: 53px;
+            color: $backgroundColor;
         }
 
         input[type=file] {
-            color: #21262E;
+            color: $backgroundColor;
         }
     }
 }
