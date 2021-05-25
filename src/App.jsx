@@ -8,7 +8,6 @@ import login from './Pages/Login'
 import register from './Pages/Register'
 import start from './Pages/Start'
 import camera from './Pages/CameraPage'
-// import PostImage from './Pages/TempPostImage'
 import CreatePost from './Pages/CreatePost'
 
 import {

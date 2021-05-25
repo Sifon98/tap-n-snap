@@ -28,7 +28,9 @@ const Footer = ({ cameraBtn, imageBtn }) => {
                 <Link className={Style.imageUpload} to="/createPost">{imageIcon}</Link>
                 { /*<a className={Style.imageUpload} href="/">{imageIcon}</a> */}
             </div>
-            <ScrollButton/>
+
+            {/* !!! Scroll button causes memory leak for entire application, OSSIAN!!! */}
+            {/* <ScrollButton/> */} 
 
         </div>
         

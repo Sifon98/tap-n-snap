@@ -11,21 +11,20 @@ function Home() {
     const imageBtn = true;
 
     const [newPosts, setNewPosts] = useState([]); 
+    const [display, setDisplay] = useState(null); 
+    
+    const fetchPosts = async () => {
+        const res = await fetch('http://localhost:4000/posts');
+        const data = await res.json();
 
-    useEffect(() => {
-        const fetchPosts = async () => {
-            const res = await fetch('http://localhost:4000/posts');
-            const data = await res.json();
+        console.log(data);
+        setNewPosts(data);
+        setDisplay(true);
+    }
 
-            console.log(data);
-            setNewPosts(data);
-        }
+    useEffect(() => fetchPosts(), [])
 
-        fetchPosts();
-    }, [])
-
-
-    return (
+    return display ? (
         <div>
             <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <Searchbar />
@@ -43,7 +42,7 @@ function Home() {
             </div>
             <Footer cameraBtn={cameraBtn} imageBtn={imageBtn}/>
         </div>
-    )
+    ) : null;
 }
 
 export default Home
