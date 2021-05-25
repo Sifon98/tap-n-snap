@@ -1,5 +1,7 @@
 body {
     font-family: 'Arvo', serif;
+    background:#21262E;
+    text-align: center;
 }
 
 #player {
@@ -14,3 +16,8 @@ body {
 #canvas, #new-capture-btn {
   display: none;
 }
+/* *{
+  
+  background-size: 100% ;
+ 
+} */
