@@ -1,9 +1,10 @@
 import React from 'react'
 import Webcam from "react-webcam";
+import Style from '../Components/CSS/CameraPage.module.scss'
 
 const videoConstraints = {
   width: 400,
-  height: 400,
+  height: 1200,
   facingMode: "user"
 };
 
@@ -18,27 +19,30 @@ const videoConstraints = {
 
   return (
     <>
-      <div className="cameraDiv">
+      {/* <div className={Style.cameraDiv}> */}
 
         <Webcam
+        //   height={1000}
+        //   width={400}
           mirrored={true}
           ref={webcamRef}
           screenshotFormat="image/jpeg/jpg"
           videoConstraints={videoConstraints}
-          audio={false}
+          audio={false} //mic-option
         />
-      </div>
+      {/* </div> */}
 
-      <div className="buttonDiv">
-        <button className="cameraButton" onClick={capture}>Take photo</button>
+    <div className={Style.previewContainer}>
+      <div className={Style.buttonDiv}>
+
+        {imgSrc && (
+            <img className={Style.previewImage}
+            src={imgSrc}
+            />
+            )}
+          </div>
+        <button className={Style.cameraButton} onClick={capture}></button>
       </div>
-      
-      <br></br>
-      {imgSrc && (
-        <img className="previewImage"
-          src={imgSrc}
-        />
-      )}
     </>
   );
 };
