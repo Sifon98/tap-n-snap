@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Searchbar from '../Components/Searchbar'
-import styles from '../Components/CSS/Home.module.scss';
+import Style from './CSS/home.module.scss';
 
 function Home() {
     const backBtn = false;
@@ -17,7 +17,6 @@ function Home() {
         const res = await fetch('http://localhost:4000/posts');
         const data = await res.json();
 
-        console.log(data);
         setNewPosts(data);
         setDisplay(true);
     }
@@ -26,15 +25,13 @@ function Home() {
 
     return display ? (
         <div>
-            <br />
-            <br />
             <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <Searchbar />
-            <div className={styles.postContainer}>
+            <div className={Style.postContainer}>
                 {
                     newPosts.map(post => (
-                        <div key={post['_id']} style={{ border: '2px solid #BBB', margin: '5px', padding: '10px' }}>
-                            <img src={'/uploads/' + post.url} alt={post.tags.join(' ')} style={{ width: '100%' }}/>
+                        <div key={post['_id']} className={Style.wrapper}>
+                            <img src={'/uploads/' + post.url} alt={post.tags.join(' ')}/>
                             <p>User: {post.user}</p>
                             <p>{post.description}</p>
                             <p>{post.tags.map(tag => '#' + tag).join(' ')}</p>

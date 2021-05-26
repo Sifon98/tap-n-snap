@@ -1,5 +1,5 @@
 import React from 'react'
-import style from '../Components/CSS/login.module.scss'
+import style from './CSS/login.module.scss'
 import Navbar from '../Components/Navbar'
 import { Link } from 'react-router-dom'
 

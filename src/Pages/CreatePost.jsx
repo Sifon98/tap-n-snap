@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Style from '../Components/CSS/createPost.module.scss';
+import Style from './CSS/createPost.module.scss';
 
 const CreatePost = () => {
 

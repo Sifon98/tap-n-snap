@@ -1,6 +1,4 @@
 import React from 'react'
-import './Components/CSS/Home.module.scss'
-// import Searchbar from './Components/Searchbar'
 import './App.css'
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'

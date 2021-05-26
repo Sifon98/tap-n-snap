@@ -1,6 +1,6 @@
 import React  from 'react'
 import Navbar from '../Components/Navbar'
-import Style from '../Components/CSS/start.module.scss'
+import Style from './CSS/start.module.scss'
 
 function Start() {
   return (

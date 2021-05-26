@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import Style from '../Components/CSS/profile.module.scss'
+import Style from './CSS/profile.module.scss'
 
 function Profile() {
     const backBtn = true;

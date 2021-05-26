@@ -1,7 +1,4 @@
 import React, {useState} from 'react';
-import {FaArrowCircleUp} from 'react-icons/fa';
-import { Button } from '../Components/CSS/Styles';
-import styled from 'styled-components';
   
 const ScrollButton = () =>{
   
@@ -28,8 +25,8 @@ const ScrollButton = () =>{
   
   return (
     <Button>
-     <FaArrowCircleUp onClick={scrollToTop} 
-     style={{display: visible ? 'inline' : 'none'}} />
+     {/* <FaArrowCircleUp onClick={scrollToTop} 
+     style={{display: visible ? 'inline' : 'none'}} /> */}
     </Button>
   );
 }
