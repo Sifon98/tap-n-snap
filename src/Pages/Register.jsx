@@ -1,48 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Style from './CSS/register.module.scss'
 import Navbar from '../Components/Navbar'
 import { Link } from 'react-router-dom'
 
 function Register() {
-  return (
-    <div>
-           <br />
-           <br />
-       <Navbar />
-       
-       <i className="fas fa-user" ></i>
-       <input type="username"
-               placeholder="  Username..."
-               className={Style.inputr1} />
-               <br />
-        
-        <i className="fas fa-envelope"></i>
-        <input type="email"
-               placeholder="  Email..."
-               className={Style.inputr} />       
-               <br />
-         
-        <i className="fas fa-key" ></i>      
-        <input type="password"
-               placeholder="  Password..."
-               className={Style.inputr} />
-               <br />
-         
-        <i className="fas fa-key" ></i>     
-        <input type="password"
-               placeholder="  Confirm Password..."
-               className={Style.inputr} />
-               <br />
 
-        <button type="submit"
-                className={Style.btn}>SIGN UP</button> 
+       const [userName, setUserName] = useState('');
+       const [email, setEmail] = useState('');
+       const [password, setPassword] = useState('');
 
-              <br />
-        <small>Already have an account?</small>     <Link className={Style.a}  to='/login'>Login here</Link>  
-       
+       const uploadUser = async e => {
+              e.preventDefault();
+              // If any field is blank don't send request
+              if (!userName && !email && !password) { return; }
 
-    </div>
-  )
+              fetch("http://localhost:4000/register", {
+                     method: "post",
+                     headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                     },
+                     body: JSON.stringify({
+                            name:     userName,
+                            email:    email,
+                            password: password
+                     })
+              })
+              console.log('User registered');
+       }
+
+       // const confirmPasswordHandler = () => { }
+
+       return (
+              <div>
+                     <br />
+                     <br />
+                     <Navbar />
+                     <form onSubmit={uploadUser}>
+                            <i className="fas fa-user" ></i>
+                            <input type="username" placeholder="  Username..." 
+                                   className={Style.inputr1} onChange={e => setUserName(e.target.value)} />
+                                   <br />
+                            <i className="fas fa-envelope"></i>
+                            <input type="email" placeholder="  Email..." 
+                                   className={Style.inputr} onChange={e => setEmail(e.target.value)} />       
+                                   <br />
+                            <i className="fas fa-key" ></i>      
+                            <input type="password" placeholder="  Password..." 
+                                   className={Style.inputr} onChange={e => setPassword(e.target.value)} />
+                                   <br />
+                            <i className="fas fa-key" ></i>     
+                            <input type="password" placeholder="  Confirm Password..." className={Style.inputr} />
+                                   <br />
+                            <button type="submit" className={Style.btn}>SIGN UP</button> 
+                     </form>       
+                     <br />
+                     <small>Already have an account?</small><Link className={Style.a} to='/login'>Login here</Link>  
+                     
+
+              </div>
+       )
 }
 
 export default Register

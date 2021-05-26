@@ -7,6 +7,11 @@ const app = express()
 app.use(express.json({ limit: '100mb'}))
 app.use(cors())
 
+// Authentication route
+const AuthRoute = require('./backend/routes/auth')
+app.use('/', AuthRoute)
+
+// Post route
 const postRouter = require('./backend/routes/posts')
 app.use('/posts', postRouter)
 
