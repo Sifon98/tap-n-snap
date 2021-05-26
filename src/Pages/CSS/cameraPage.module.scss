@@ -1,31 +1,42 @@
 * {
     box-sizing: border-box;
-  }
+    margin-bottom:-5px;
+}
 
-.previewContainer {
-    
+body {
+    background-color: rgba(0,0,0,0.8) !important;
+}
 
-    .buttonDiv {
-        width:100%;
-        height:200px;
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: rgba(0,0,0,0.8);
-        align-items: center;
-        z-index: 10;
-        flex-direction: row;
-        bottom: 0px;
-        width: 100%;
-        height: 20%;
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.8);
+    height: 150px;
+    width:400px;
+    padding:10px;
+    // .buttonDiv {
+    //     width:100%;
+    //     height:200px;
+    //     display:flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     // background-color: rgba(0,0,0,0.8);
+    //     align-items: center;
+    //     z-index: 10;
+    //     flex-direction: row;
+    //     bottom: 0px;
+    //     width: 100%;
+    //     height: 20%;
         
-        .previewImage {
-            display: flex;
-            flex-direction:row;
-            width: 50%;
-            height:80%;  
-        }
-    }
+        // .previewImage {
+        //     display: flex;
+        //     flex-direction:row;
+        //     width: 50%;
+        //     height:80%;  
+        // }
+    // }
         
     .cameraButton{
         background-color: white;
