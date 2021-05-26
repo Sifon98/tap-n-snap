@@ -22,13 +22,14 @@ const videoConstraints = {
       {/* <div className={Style.cameraDiv}> */}
 
         <Webcam
-        //   height={1000}
         //   width={400}
+        //   height={1200}
           mirrored={true}
           ref={webcamRef}
           screenshotFormat="image/jpeg/jpg"
           videoConstraints={videoConstraints}
-          audio={false} //mic-option
+          audio={false} // allow-sound
+          microphone={false}
         />
       {/* </div> */}
 
