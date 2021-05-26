@@ -26,6 +26,8 @@ function Home() {
 
     return display ? (
         <div>
+            <br />
+            <br />
             <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <Searchbar />
             <div className={styles.postContainer}>

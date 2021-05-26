@@ -6,13 +6,16 @@ function Start() {
   return (
     <div>
       <br/>
+      <br/>
+      <br/>
         <Navbar />
+        <h4 className={Style.h4}>Share with the tap of a button</h4>
 
         <div className={Style.body}>
 
         
             <button type="submit"
-                    className={Style.btnsl}>Login</button>
+                    className={Style.btnslo}>Login</button>
 
                     <br />
 
