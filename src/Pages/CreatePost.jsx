@@ -5,12 +5,10 @@ const CreatePost = () => {
 
     // State for Post data
     const [imageData, setImageData] = useState('');
-    const [desc, setDesc] = useState('');
+
+    // Tag states
+    const [newTag, setNewTag] = useState('');
     const [tags, setTags] = useState([]);
-    const [tagsArray, setTagsArray] = useState([]);
-    const [oldArray, setOldArray] = useState([]);
-    const [tagId, setTagId] = useState(0);
-    const [divId, setDivId] = useState(0);
 
     const photoChosen = () => {
         let file = document.forms.textForm.file.files[0];
@@ -39,7 +37,7 @@ const CreatePost = () => {
             body: JSON.stringify({
                 url: imageData,
                 user: "User123", // <-- temporary user
-                description: desc,
+                description: "DESCRIPTION NOT NEEDED", // <-- description should be removed from backend 
                 tags: tags
             })
         })
@@ -48,48 +46,14 @@ const CreatePost = () => {
     }
 
     const addTag = () => {
-        const boxValue = document.getElementById('tagBox').value;
-
-        if(boxValue == ""){
-            console.log(tagsArray);
-            console.log(oldArray);
-            return;
-        }else{
-            setOldArray(tagsArray);
-            setTagsArray(oldArray => [...oldArray, boxValue]);
-            setTagId(tagId + 1);
-            setDivId(divId + 1);
-            console.log(tagsArray);
-            console.log(oldArray);
-
-            var tag = document.createElement('div');
-            tag.value = boxValue;
-            tag.id = "Div" + divId;
-            tag.innerHTML = boxValue + " " + `<i id=${tagId} value="${boxValue}" class="fas fa-times"></i>`;
-            var element = document.getElementById("tagDiv");
-            element.appendChild(tag);
-
-            document.getElementById("Div" + divId).addEventListener("click", removeTag);
-
-            document.getElementById('tagBox').value = ''
-        }
+        setTags(tags => [...tags, newTag]);
+        setNewTag('');
     }
 
-    function removeTag() {
-        console.log("YAYAYA")
-        var removeDiv = document.getElementById(this.id);
-        console.log(removeDiv)
-
-        var test = document.getElementById(this.id).value;
-        var arr = tagsArray;
-        console.log(test)
-        console.log(arr)
-
-        // ======== Code works but the array isnt updated as it should ========
-        arr = arr.filter(e => e !== `${test}`);
-        setTagsArray(arr)
-        setOldArray(arr)
-        removeDiv.parentNode.removeChild(removeDiv);
+    function removeTag(tagToRemove) {
+        setTags(tags => (
+            tags.filter(tag => tag !== tagToRemove))
+        )
     }
 
     return (
@@ -98,10 +62,16 @@ const CreatePost = () => {
             <div className={Style.wrapper}>
                 {imageData && <img src={imageData} width="175" />}
                 <div className={Style.tags}>
-                    <input id="tagBox" maxLength="15" type="text" placeholder="Tags..." onChange={e => { setTags(e.target.value.split(" "))} } />
+                    <input maxLength="15" type="text" placeholder="Enter tag" onChange={e => setNewTag(e.target.value)} value={newTag} />
                     <button className={Style.icon} onClick={addTag}><i className="fas fa-check"></i></button>
-                    <div id="tagDiv" className={Style.tagDiv}>
-
+                    <div className={Style.tagDiv}>
+                        {
+                            tags.map(tag => (
+                                <div key={Date.now() + Math.random()} onClick={() => removeTag(tag)}>
+                                    {tag} <i className="fas fa-times"></i>
+                                </div>
+                            ))
+                        }
                     </div>
                 </div>
             </div>
