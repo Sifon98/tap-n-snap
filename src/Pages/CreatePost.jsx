@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Style from './CSS/createPost.module.scss';
+import Image from '../img/logo.png'
 
 const CreatePost = () => {
 
     // State for Post data
-    const [imageData, setImageData] = useState('');
+    const [imageData, setImageData] = useState(Image);
 
     // Tag states
     const [newTag, setNewTag] = useState('');
@@ -48,12 +49,15 @@ const CreatePost = () => {
     const addTag = () => {
         setTags(tags => [...tags, newTag]);
         setNewTag('');
+        console.log(tags)
     }
 
     function removeTag(tagToRemove) {
+        console.log(tags)
         setTags(tags => (
             tags.filter(tag => tag !== tagToRemove))
         )
+        console.log(tags)
     }
 
     return (
