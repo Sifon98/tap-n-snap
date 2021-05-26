@@ -48,7 +48,7 @@ const CreatePost = () => {
         console.log('Photo uploaded!');
     }
 
-    const addTag = async() => {
+    const addTag = () => {
         const boxValue = document.getElementById('tagBox').value;
 
         if(boxValue == ""){
@@ -87,9 +87,10 @@ const CreatePost = () => {
         console.log(arr)
 
         // ======== Code works but the array isnt updated as it should ========
-        // arr = arr.filter(e => e !== `${test}`);
-        // setTagsArray(arr)
-        // removeDiv.parentNode.removeChild(removeDiv);
+        arr = arr.filter(e => e !== `${test}`);
+        setTagsArray(arr)
+        setOldArray(arr)
+        removeDiv.parentNode.removeChild(removeDiv);
     }
 
     return (
@@ -109,7 +110,7 @@ const CreatePost = () => {
             <form name="textForm" onSubmit={uploadPhoto}>
                 <input type="file" name="file" accept="image/*" onChange={photoChosen} />
                 <input type="button" value="TAKE PHOTO" className={Style.inputButton} />
-                <input type="submit" value="SEND" className={Style.inputButton} />
+                <input type="submit" value="&#xf067;" className={Style.inputButton} />
             </form>
         </div>
     )

@@ -74,12 +74,12 @@ $backgroundColor: #21262E;
 
     form {
         margin-top: 70px;
-        height: 200px;
+        height: 300px;
         width: 92%;
         display: flex;
         align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
+        justify-content: space-evenly;
+        flex-direction: column;
 
         .inputButton {
             font-family: $fontFamily;
@@ -91,7 +91,8 @@ $backgroundColor: #21262E;
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            color: $backgroundColor;
+            color: white;
+            background-color: #A371F7;
         }
           
         input[type=file]::file-selector-button {
@@ -104,11 +105,21 @@ $backgroundColor: #21262E;
             border-radius: 100px;
             border: none;
             margin-left: 53px;
-            color: $backgroundColor;
+            color: white;
+            background-color: #A371F7;
         }
 
         input[type=file] {
             color: $backgroundColor;
+        }
+
+        input[type=submit] {
+            font-family: FontAwesome;
+            font-size: 30px;
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            color: black;
         }
     }
 }
