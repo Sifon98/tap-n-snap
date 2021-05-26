@@ -4,7 +4,7 @@ import Style from "./CSS/cameraPage.module.scss";
 
 const videoConstraints = {
   width: 400,
-  height: 1000,
+  height: 1200,
   facingMode: "user",
 };
 
@@ -26,8 +26,8 @@ const CameraPage = () => {
         screenshotFormat="image/jpeg/jpg"
         videoConstraints={videoConstraints}
         audio={false} // mute sound
-        microphone={false}
-        
+        // width= {400}
+        // height= {1200}
       />
       <div className={Style.buttonContainer}>
 
