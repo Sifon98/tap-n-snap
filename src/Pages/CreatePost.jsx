@@ -5,7 +5,7 @@ import Image from '../img/logo.png'
 const CreatePost = () => {
 
     // State for Post data
-    const [imageData, setImageData] = useState(Image);
+    const [imageData, setImageData] = useState('');
 
     // Tag states
     const [newTag, setNewTag] = useState('');
@@ -47,26 +47,35 @@ const CreatePost = () => {
     }
 
     const addTag = () => {
-        setTags(tags => [...tags, newTag]);
-        setNewTag('');
-        console.log(tags)
+        const boxValue = document.getElementById('tagBox').value;
+
+        if(boxValue == ""){
+            console.log(tags);
+            return;
+        }else{
+            setTags(tags => [...tags, newTag]);
+            setNewTag('');
+        }
     }
 
+    useEffect(() => {
+        addTag()
+    }, [tags]);
+
     function removeTag(tagToRemove) {
-        console.log(tags)
         setTags(tags => (
             tags.filter(tag => tag !== tagToRemove))
         )
-        console.log(tags)
     }
 
     return (
         <div className={Style.createPost}>
 
             <div className={Style.wrapper}>
-                {imageData && <img src={imageData} width="175" />}
+                
+                {imageData ? <img src={imageData} width="175" /> : <div className={Style.placeholder}><i className="fas fa-user fa-5x"></i></div>}
                 <div className={Style.tags}>
-                    <input maxLength="15" type="text" placeholder="Enter tag" onChange={e => setNewTag(e.target.value)} value={newTag} />
+                    <input id="tagBox" maxLength="15" type="text" placeholder="Enter tag" onChange={e => setNewTag(e.target.value)} value={newTag} />
                     <button className={Style.icon} onClick={addTag}><i className="fas fa-check"></i></button>
                     <div className={Style.tagDiv}>
                         {
