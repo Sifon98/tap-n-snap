@@ -10,10 +10,10 @@ const Navbar = () => {
         var listener = document.addEventListener("scroll", e => {
             if (mounted) {
                 const scrolled = document.documentElement.scrollTop;
-                if (scrolled > 100){
+                if (scrolled > 10){
                 setVisible(true)
                 } 
-                else if (scrolled <= 100){
+                else if (scrolled <= 10){
                 setVisible(false)
                 }
             }
