@@ -5,19 +5,23 @@ const ScrollButton = () => {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-      var toggleVisible = document.addEventListener("scroll", e => {
-          const scrolled = document.documentElement.scrollTop;
-          if (scrolled > 200){
-            setVisible(true)
-          } 
-          else if (scrolled <= 200){
-            setVisible(false)
-          }
-      })
-
-      return () => {
-        document.removeEventListener("scroll", toggleVisible)
+    let mounted = true
+    var toggleVisible = document.addEventListener("scroll", e => {
+      if (mounted) {
+        const scrolled = document.documentElement.scrollTop;
+        if (scrolled > 200){
+          setVisible(true)
+        } 
+        else if (scrolled <= 200){
+          setVisible(false)
+        }
       }
+    })
+
+    return () => {
+      document.removeEventListener("scroll", toggleVisible)
+      mounted = false
+    }
   }, [visible])
   
   const scrollToTop = () => {
