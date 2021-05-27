@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import Style from './CSS/register.module.scss'
 import Navbar from '../Components/Navbar'
+import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 
 function Register() {
 
+       const [isLoggedIn, setIsLoggedIn] = useState(false);
        const [userName, setUserName] = useState('');
        const [email, setEmail] = useState('');
        const [password, setPassword] = useState('');
@@ -26,12 +28,17 @@ function Register() {
                             password: password
                      })
               })
-              console.log('User registered');
+              .then(res => res.json())
+              .then(data => {
+              console.log(data.message)
+                     if (data.message === 'User Added succesfully!') {
+                            setIsLoggedIn(true);
+                     }
+              })
+              .catch(error => console.log('ERROR!', error));
        }
 
-       // const confirmPasswordHandler = () => { }
-
-       return (
+       return isLoggedIn ? <Redirect to="/" /> : (
               <div>
                      <br />
                      <br />
