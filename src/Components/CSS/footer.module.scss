@@ -1,11 +1,49 @@
-//$colorGradientReverse: linear-gradient(180deg, rgba(180,0,243,1) 0%, rgba(209,0,243,1) 100%);
+$footerColor: #21262E;
 $iconColor: white;
 
+.scrollBtn {
+    opacity: 1;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    position: fixed;
+    left: 84%;
+    top: 86.5%;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0px 3px $footerColor;
+    transition: ease-in-out 0.5s;
+
+    i {
+        opacity: 1;
+        transition: ease-in-out 0.5s;
+    }
+}
+
+.scrollBtnHide {
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    position: fixed;
+    left: 84%;
+    top: 86.5%;
+    border: none;
+    border-radius: 100px;
+    box-shadow: 0px 3px $footerColor;
+    transition: ease-in-out 0.5s;
+
+    i {
+        opacity: 0;
+        transition: ease-in-out 0.5s;
+    }
+}
+
 .footer {
+    border-top: 2px solid #30373D;
     display: flex;
-    //background: $colorGradientReverse;
-    
-    height: 10vh;
+    background-color: $footerColor;
+    height: 6vh;
     justify-content: space-evenly;
     align-items: center;
     position: fixed;
@@ -16,21 +54,31 @@ $iconColor: white;
     .iconContainer {
         width: 80%;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         align-items: center;
+
+        .home {
+            color: $iconColor;
+            margin-top: 5px;
+            font-size: 28px;
+        }
 
         .camera {
             color: $iconColor;
+            margin-top: 3px;
+            font-size: 28px;
         }
         
         .imageUpload {
             color: $iconColor;
             margin-top: 5px;
+            font-size: 32px;
         }
 
-
+        .profile {
+            color: $iconColor;
+            margin-top: 2px;
+            font-size: 25px;
+        }
     }
-
-    
 }
-
