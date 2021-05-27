@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import Style from './CSS/home.module.scss';
+import Style from './CSS/post.module.scss';
 
 function Post({match}) {
     const [posts, setPost] = useState([]); 
@@ -20,8 +20,8 @@ function Post({match}) {
     return display ? (
         <div>
             <Navbar/>
-            <div className={Style.postContainer}>
-                <div className={Style.wrapper}>
+            <div className={Style.wrapper}>
+                <div className={Style.post}>
                     <img src={'/uploads/' + posts.url} alt={posts.tags.join(' ')}/>
                     <p>User: {posts.user}</p>
                     <p>{posts.description}</p>
