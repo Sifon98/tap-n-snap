@@ -2,11 +2,12 @@ import React from 'react'
 import './App.css'
 import Home from './Pages/Home'
 import Profile from './Pages/Profile'
-import login from './Pages/Login'
-import register from './Pages/Register'
-import start from './Pages/Start'
-import camera from './Pages/CameraPage'
+import Login from './Pages/Login'
+import Register from './Pages/Register'
+import Start from './Pages/Start'
+import Camera from './Pages/CameraPage'
 import CreatePost from './Pages/CreatePost'
+import Post from './Pages/Post'
 
 import {
   BrowserRouter as Router,
@@ -22,11 +23,12 @@ function App() {
         <Switch>
           <Route path='/' exact component={Home}/>
           <Route path='/profile' component={Profile}/>
-          <Route path='/login' component={login}/>
-          <Route path='/register' component={register}/>
-          <Route path='/start' component={start}/>
-          <Route path='/camera' component={camera}/>
+          <Route path='/login' component={Login}/>
+          <Route path='/register' component={Register}/>
+          <Route path='/start' component={Start}/>
+          <Route path='/camera' component={Camera}/>
           <Route path='/createPost' component={CreatePost}/>
+          <Route path='/post/:id' component={Post}/>
         </Switch>
       </Router>
     </div>
