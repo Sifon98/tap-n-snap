@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Style from './CSS/createPost.module.scss';
-import Image from '../img/logo.png'
+import Navbar from '../Components/Navbar'
+import { Link } from 'react-router-dom'
 
 const CreatePost = () => {
 
@@ -58,6 +59,7 @@ const CreatePost = () => {
         }
     }
 
+    // Re-render with callback
     useEffect(() => {
         addTag()
     }, [tags]);
@@ -69,32 +71,38 @@ const CreatePost = () => {
     }
 
     return (
-        <div className={Style.createPost}>
-
+        <div>
+        <Navbar />
+        <form name="textForm" className={Style.form} onSubmit={uploadPhoto}>
             <div className={Style.wrapper}>
-                
                 {imageData ? <img src={imageData} width="175" /> : <div className={Style.placeholder}><i className="fas fa-user fa-5x"></i></div>}
-                <div className={Style.tags}>
-                    <input id="tagBox" maxLength="15" type="text" placeholder="Enter tag" onChange={e => setNewTag(e.target.value)} value={newTag} />
-                    <button className={Style.icon} onClick={addTag}><i className="fas fa-check"></i></button>
-                    <div className={Style.tagDiv}>
-                        {
-                            tags.map(tag => (
-                                <div key={Date.now() + Math.random()} onClick={() => removeTag(tag)}>
-                                    {tag} <i className="fas fa-times"></i>
-                                </div>
-                            ))
-                        }
-                    </div>
+                <div className={Style.buttonLayout}>
+                    <input type="file" name="file" accept="image/*" onChange={photoChosen} className={Style.inputFile} />
+                    <input type="button" value="TAKE PHOTO" className={Style.inputButton} />
                 </div>
             </div>
-
-            <form name="textForm" onSubmit={uploadPhoto}>
-                <input type="file" name="file" accept="image/*" onChange={photoChosen} />
-                <input type="button" value="TAKE PHOTO" className={Style.inputButton} />
-                <input type="submit" value="&#xf067;" className={Style.inputButton} />
-            </form>
+            <div className={Style.tags}>
+                <input id="tagBox" maxLength="15" type="text" placeholder="Enter tags" onChange={e => setNewTag(e.target.value)} value={newTag} />
+                <button className={Style.icon} onClick={addTag}><i className="fas fa-check"></i></button>
+                <div className={Style.tagDiv}>
+                    {
+                        tags.map(tag => (
+                            <div key={Date.now() + Math.random()} onClick={() => removeTag(tag)}>
+                                {tag} <i className="fas fa-times"></i>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+            <div className={Style.test}>
+                <input type="submit" value="&#xf067;" className={Style.inputButton, Style.inputSubmit} />
+            </div>
+            <Link to="/" className={Style.iHelper}>
+                <i className="fas fa-chevron-left"></i>
+            </Link>
+        </form>
         </div>
+        
     )
 }
 
