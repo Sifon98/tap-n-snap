@@ -83,7 +83,7 @@ const CreatePost = () => {
             </div>
             <div className={Style.tags}>
                 <input id="tagBox" maxLength="15" type="text" placeholder="Enter tags" onChange={e => setNewTag(e.target.value)} value={newTag} />
-                <button className={Style.icon} onClick={addTag}><i className="fas fa-check"></i></button>
+                <button type="button" className={Style.icon} onClick={addTag}><i className="fas fa-check"></i></button>
                 <div className={Style.tagDiv}>
                     {
                         tags.map(tag => (
