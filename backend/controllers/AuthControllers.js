@@ -44,12 +44,16 @@ const login = (req, res, next) => {
                     })
                 }
                 if(result){
-                    let token = jwt.sign({name: user.name}, 'thisIsThePassword', {expiresIn: '1h'})
+                    let token = jwt.sign({_id: user._id}, 'thisIsThePassword', {expiresIn: '12h'})
+                    res.cookie('jwt', token,{
+                        httpOnly: true
+                    })  
                     res.json({
                         message: 'Login Succesful!',
-                        username: user.name,
-                        token
-                    })                    
+                       // username: user.name,
+                       // token
+                    }) 
+                                      
                 }else{
                     res.json({
                         message: 'Password does not matched'
@@ -64,6 +68,35 @@ const login = (req, res, next) => {
     })
 }
 
+const user = async (req, res, next) => {
+    
+        const cookie = req.cookies['jwt']
+
+        const claims = jwt.verify(cookie, 'thisIsThePassword')
+
+        if (!claims){
+            res.status(401).json({
+                message: 'unauthenticated'
+            })
+        }
+
+        const user = await User.findOne({_id: claims._id})
+        const {password, ...data} = await user.toJSON()
+
+        res.send(data)
+       
+}
+
+const logout = (req, res, next) => {
+    //res.cookie('jwt', {maxAge: 0})
+    res.clearCookie('jwt')
+
+    res.json({
+        message: 'Removed succesfully'
+    })
+}
+
+
 module.exports = {
-    register, login
+    register, login, user, logout
 }

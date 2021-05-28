@@ -34,11 +34,9 @@ function Login() {
             }
           })
           .catch(error => console.log('ERROR!', error));
-
-          //console.log('User logged in');
   }
 
-  return isLoggedIn ? <Redirect to="/" /> : (
+  return isLoggedIn ? <Redirect to="/" /> : ( // conditional rendering with react (with ternary operators) <--
     <div>
         <br />
         <Navbar />
