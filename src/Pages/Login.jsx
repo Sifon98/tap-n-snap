@@ -1,35 +1,64 @@
-import React from 'react'
-import style from './CSS/login.module.scss'
+import React, { useState } from 'react'
+import Style from './CSS/login.module.scss'
 import Navbar from '../Components/Navbar'
+import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 
-
 function Login() {
-  return (
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const login = async e => {
+        e.preventDefault();
+        // If any field is blank don't send request
+        if (!email && !password) { return; }
+        
+          fetch("http://localhost:4000/login", {
+                  method: "post",
+                  headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                        email: email,
+                        password: password
+                  })
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data.message)
+            if (data.message === 'Login Succesful!') {
+              setIsLoggedIn(true);
+            }
+          })
+          .catch(error => console.log('ERROR!', error));
+  }
+
+  return isLoggedIn ? <Redirect to="/" /> : ( // conditional rendering with react (with ternary operators) <--
     <div>
         <br />
         <Navbar />
-           
-        <i className="fas fa-user" ></i>
-        <input type="email"          
-                placeholder="  Username... " 
-                className={style.inputl}
-        />
-      
+        <form onSubmit={login}>
+            <i className="fas fa-user" ></i>
+            <input type="email"          
+                    placeholder="  Email... " 
+                    className={Style.inputl}
+                    onChange={e => setEmail(e.target.value)} 
+            />          
+            <br />           
+            <i className="fas fa-key" ></i>
+            <input type="password"
+                    placeholder="  Password..."
+                    className={Style.input}
+                    onChange={e => setPassword(e.target.value)} 
+              />       
+            <br />
+            <button type="submit" className={Style.btnl}>SIGN IN</button>
+        </form>     
         <br />
-        
-        <i className="fas fa-key" ></i>
-        <input type="password"
-                placeholder="  Password..."
-                className={style.input}
-          />
-    
-        <br />
-        <button type="submit"         
-                className={style.btnl}>SIGN IN</button>
-        <br />
-
-        <small>Don't have an account?</small> <Link className={style.a}  to='/register'>Register</Link>     
+        <small>Don't have an account?</small> <Link className={Style.a} to='/register'>Register</Link>     
     </div>
   )
 }

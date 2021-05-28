@@ -1,3 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn {
+    cursor: pointer;
+    margin: 0 auto;
+    background: #A371F7;
+    color: black;
+    width: 160px;
+    height: 50px;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 30px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+
+}
+
+.h4{
+    color: white;
+    letter-spacing: 0.5pt;
+    font-weight: lighter;
+    margin: 50px;
+}
+/*
 .btnslo{
     background: #A371F7;
     color: black;
@@ -21,9 +48,4 @@
     margin-top: 100px;
     margin-bottom: 10px;
 }
-.h4{
-    color: white;
-    letter-spacing: 0.5pt;
-    font-weight: lighter;
-    margin: 100px;
-}
+*/
