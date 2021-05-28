@@ -1,13 +1,18 @@
 .wrapper {
-    border: 2px solid #BBB;
-    margin: 5px;
-    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 
-    img {
-        width: 100%;
-    }
+    .post {
+        margin: 15px;
+        background-color: #30373D;
 
-    p {
-        color: white;
+        img {
+            width: 100%;
+        }
+
+        p {
+            color: white;
+        }
     }
 }

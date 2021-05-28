@@ -1,11 +1,11 @@
-$footerColor: #21262E;
-$iconColor: white;
+$darkColor: #21262E;
+$secColor: #30373D;
 
 .navbar {
-  border-bottom: 2px solid #30373D;
+  border-bottom: 2px solid $secColor;
   width: 100%;
   height: 10vh;
-  background-color: $footerColor;
+  background-color: $darkColor;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,10 +19,10 @@ $iconColor: white;
 }
 
 .navbarSmall {
-  border-bottom: 2px solid #30373D;
+  border-bottom: 2px solid $secColor;
   width: 100%;
   height: 6vh;
-  background-color: $footerColor;
+  background-color: $darkColor;
   display: flex;
   align-items: center;
   justify-content: center;
