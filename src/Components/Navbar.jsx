@@ -1,29 +1,34 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Style from './CSS/navbar.module.scss'
 import Logo from '../img/logo.png'
-import { Link } from 'react-router-dom'
 
-var back = "";
-var profile = "";
+const Navbar = () => {
+    const [visible, setVisible] = useState(false)
 
-function Navbar({ backBtn, profileBtn }) {
-    
-    if (backBtn == true)
-        back = <i className="fas fa-chevron-left fa-2x"></i>
-    else 
-        back = ""
-    
-    if (profileBtn == true)
-        profile = <i className="fas fa-user fa-2x"></i>
-    else 
-        profile = ""
-    
+    useEffect(() => {
+        let mounted = true
+        var listener = document.addEventListener("scroll", e => {
+            if (mounted) {
+                const scrolled = document.documentElement.scrollTop;
+                if (scrolled > 10){
+                setVisible(true)
+                } 
+                else if (scrolled <= 10){
+                setVisible(false)
+                }
+            }
+        })
+
+        return () => {
+          document.removeEventListener("scroll", listener)
+          mounted = false
+        }
+    }, [visible])
+
     return (
-        <div className={Style.navbar}>
-            <Link className={Style.left} to="/">{back}</Link>
+        <nav className={`${ visible ? Style.navbarSmall : Style.navbar}`}>
             <img src={Logo} alt="logo"/>
-            <Link className={Style.right} to="/profile">{profile}</Link>
-        </div>
+        </nav>
     )
 }
 

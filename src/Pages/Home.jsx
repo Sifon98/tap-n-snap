@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Searchbar from '../Components/Searchbar'
 import Style from './CSS/home.module.scss';
+import { Link } from 'react-router-dom'
 
 function Home() {
     const backBtn = false;
@@ -31,7 +32,7 @@ function Home() {
                 {
                     newPosts.map(post => (
                         <div key={post['_id']} className={Style.wrapper}>
-                            <img src={'/uploads/' + post.url} alt={post.tags.join(' ')}/>
+                            <Link to={`/Post/${post['_id']}`}><img src={'/uploads/' + post.url} alt={post.tags.join(' ')}/></Link>
                             <p>User: {post.user}</p>
                             <p>{post.description}</p>
                             <p>{post.tags.map(tag => '#' + tag).join(' ')}</p>

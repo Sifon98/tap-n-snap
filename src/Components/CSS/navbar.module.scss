@@ -1,30 +1,36 @@
-//$colorGradiant: linear-gradient(180deg, rgba(209,0,243,1) 0%, rgba(180,0,243,1) 100%);
+$footerColor: #21262E;
 $iconColor: white;
 
 .navbar {
+  border-bottom: 2px solid #30373D;
   width: 100%;
-  height: 85px;
-  //background: $colorGradiant;
+  height: 10vh;
+  background-color: $footerColor;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
+  transition: ease-in-out 0.5s;
 
-    .left {
-      position: fixed;
-      left: 0;
-      color: $iconColor;
-      margin: 20px;
+    img {
+      transform: scale(0.7);
+      transition: ease-in-out 0.5s;
     }
+}
 
-    .right {
-      position: fixed;
-      right: 0;
-      color: $iconColor;
-      margin: 20px;
-    }
+.navbarSmall {
+  border-bottom: 2px solid #30373D;
+  width: 100%;
+  height: 6vh;
+  background-color: $footerColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  transition: ease-in-out 0.5s;
 
-    & > img {
-      height: inherit;
+    img {
+      transform: scale(0.4);
+      transition: ease-in-out 0.5s;
     }
 }

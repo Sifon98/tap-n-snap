@@ -1,14 +1,14 @@
-import React from 'react'
+import React from "react";
 import Webcam from "react-webcam";
-import Style from './CSS/cameraPage.module.scss'
+import Style from "./CSS/cameraPage.module.scss";
 
 const videoConstraints = {
   width: 400,
   height: 1200,
-  facingMode: "user"
+  facingMode: "user",
 };
 
-  const CameraPage = () => {
+const CameraPage = () => {
   const webcamRef = React.useRef(null);
   const [imgSrc, setImgSrc] = React.useState(null);
 
@@ -18,28 +18,25 @@ const videoConstraints = {
   }, [webcamRef, setImgSrc]);
 
   return (
-    <>
-    <Webcam
-      mirrored={true}
-      ref={webcamRef}
-      screenshotFormat="image/jpeg/jpg"
-      videoConstraints={videoConstraints}
-      audio={false} // allow-sound
-      microphone={false}
-    />
+    <div className={Style.wrapper}>
+      <Webcam
+        class
+        mirrored={true}
+        ref={webcamRef}
+        screenshotFormat="image/jpeg/jpg"
+        videoConstraints={videoConstraints}
+        audio={false} // mute sound
+        // width= {400}
+        // height= {1200}
+      />
+      <div className={Style.buttonContainer}>
 
-    <div className={Style.previewContainer}>
-      <div className={Style.buttonDiv}>
-
-        {imgSrc && (
-            <img className={Style.previewImage}
-            src={imgSrc}
-            />
-            )}
-          </div>
+        <div className={Style.buttonDiv}>
+          {/* {imgSrc && <img className={Style.previewImage} src={imgSrc} />} */}
+        </div>
         <button className={Style.cameraButton} onClick={capture}></button>
       </div>
-    </>
+    </div>
   );
 };
 
