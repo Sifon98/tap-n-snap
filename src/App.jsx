@@ -8,6 +8,8 @@ import Start from './Pages/Start'
 import Camera from './Pages/CameraPage'
 import CreatePost from './Pages/CreatePost'
 import Post from './Pages/Post'
+import LogOut from './Pages/LogOut'
+
 
 import {
   BrowserRouter as Router,
@@ -29,6 +31,7 @@ function App() {
           <Route path='/camera' component={Camera}/>
           <Route path='/createPost' component={CreatePost}/>
           <Route path='/post/:id' component={Post}/>
+          <Route path='/logout' component={LogOut}/>
         </Switch>
       </Router>
     </div>
