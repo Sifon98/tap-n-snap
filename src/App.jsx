@@ -7,6 +7,7 @@ import register from './Pages/Register'
 import start from './Pages/Start'
 import camera from './Pages/CameraPage'
 import CreatePost from './Pages/CreatePost'
+import LogOut from './Pages/LogOut'
 
 import {
   BrowserRouter as Router,
@@ -21,12 +22,13 @@ function App() {
       <Router>
         <Switch>
           <Route path='/' exact component={Home}/>
-          <Route path='/profile' component={Profile}/>
-          <Route path='/login' component={login}/>
-          <Route path='/register' component={register}/>
           <Route path='/start' component={start}/>
+          <Route path='/register' component={register}/>
+          <Route path='/login' component={login}/>
+          <Route path='/profile' component={Profile}/>
           <Route path='/camera' component={camera}/>
           <Route path='/createPost' component={CreatePost}/>
+          <Route path='/logout' component={LogOut}/>
         </Switch>
       </Router>
     </div>
