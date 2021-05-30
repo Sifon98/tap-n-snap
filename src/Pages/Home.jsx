@@ -6,11 +6,6 @@ import Style from './CSS/home.module.scss';
 import { Link } from 'react-router-dom'
 
 function Home() {
-    const backBtn = false;
-    const profileBtn = true;
-    const cameraBtn = true;
-    const imageBtn = true;
-
     const [newPosts, setNewPosts] = useState([]); 
     const [display, setDisplay] = useState(null); 
     
