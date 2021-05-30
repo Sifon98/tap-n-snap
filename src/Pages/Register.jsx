@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Style from './CSS/register.module.scss'
-import Navbar from '../Components/Navbar'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 
@@ -39,10 +38,9 @@ function Register() {
        }
 
        return isLoggedIn ? <Redirect to="/" /> : (
-              <div>
+              <div className={Style.wrapper}>
                      <br />
                      <br />
-                     <Navbar />
                      <form onSubmit={uploadUser}>
                             <i className="fas fa-user" ></i>
                             <input type="username" placeholder="  Username..." 

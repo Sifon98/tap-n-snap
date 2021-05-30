@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 import Style from './CSS/post.module.scss';
 
 function Post({match}) {
@@ -19,7 +17,6 @@ function Post({match}) {
 
     return display ? (
         <div>
-            <Navbar/>
             <div className={Style.wrapper}>
                 <div className={Style.post}>
                     <img src={'/uploads/' + posts.url} alt={posts.tags.join(' ')}/>
@@ -28,7 +25,6 @@ function Post({match}) {
                     <p>{posts.tags.map(tag => '#' + tag).join(' ')}</p>
                 </div>
             </div>
-            <Footer/>
         </div>
     ) : null;
 }

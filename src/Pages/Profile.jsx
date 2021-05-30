@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 import Style from './CSS/profile.module.scss'
 import Image from '../img/IMG_7468.png'
 
@@ -30,7 +28,6 @@ function Profile() {
 
     return (
         <div>
-            <Navbar/>
             <div className={`${ visible ? Style.iHelperSmall : Style.iHelper}`}>
                 <i className="fas fa-cog fa-2x"></i>
             </div>
@@ -56,7 +53,6 @@ function Profile() {
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
             </div>
-            <Footer/>
         </div>
     )
 }

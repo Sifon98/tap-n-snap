@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Style from './CSS/login.module.scss'
-import Navbar from '../Components/Navbar'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 
@@ -37,9 +36,8 @@ function Login() {
   }
 
   return isLoggedIn ? <Redirect to="/" /> : ( // conditional rendering with react (with ternary operators) <--
-    <div>
+    <div className={Style.wrapper}>
         <br />
-        <Navbar />
         <form onSubmit={login}>
             <i className="fas fa-user" ></i>
             <input type="email"          

@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 import Searchbar from '../Components/Searchbar'
 import Style from './CSS/home.module.scss';
 import { Link } from 'react-router-dom'
 
 function Home() {
-    const backBtn = false;
-    const profileBtn = true;
-    const cameraBtn = true;
-    const imageBtn = true;
 
     const [newPosts, setNewPosts] = useState([]); 
     const [display, setDisplay] = useState(null); 
@@ -26,7 +20,6 @@ function Home() {
 
     return display ? (
         <div>
-            <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <Searchbar />
             <div className={Style.postContainer}>
                 {
@@ -42,7 +35,6 @@ function Home() {
                     )).sort((a, b) => b - a) // Reverse order, so newest posts at top
                 }
             </div>
-            <Footer cameraBtn={cameraBtn} imageBtn={imageBtn}/>
         </div>
     ) : null;
 }

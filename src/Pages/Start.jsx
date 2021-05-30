@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from '../Components/Navbar'
 import Style from './CSS/start.module.scss'
 
 function Start() {
@@ -8,7 +7,6 @@ function Start() {
     <div className={Style.container}>
       <br />
       <br />
-      <Navbar />
       <h4 className={Style.h4}>Share with the tap of a button</h4>
 
       <div className={Style.body}>

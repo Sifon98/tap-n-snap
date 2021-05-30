@@ -1,13 +1,11 @@
 import React from 'react'
 import Style from './CSS/logOut.module.scss'
-import Navbar from '../Components/Navbar'
 
 function LogOut() {
   return (
     <div>
       <br />
       <br />
-        <Navbar />
 
         <h3 className={Style.h31}>Change Name:</h3>
         <h3 className={Style.h3}>Change Email:</h3>
