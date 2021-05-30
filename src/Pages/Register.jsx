@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Style from './CSS/register.module.scss'
-import Navbar from '../Components/Navbar'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 

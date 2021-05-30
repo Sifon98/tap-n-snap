@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
 import Searchbar from '../Components/Searchbar'
 import Style from './CSS/home.module.scss';
 import { Link } from 'react-router-dom'
 
 function Home() {
+
     const [newPosts, setNewPosts] = useState([]); 
     const [display, setDisplay] = useState(null); 
     

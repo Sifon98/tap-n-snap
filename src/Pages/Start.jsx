@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Navbar from '../Components/Navbar'
 import Style from './CSS/start.module.scss'
 
 function Start() {
