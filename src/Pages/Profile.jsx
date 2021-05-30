@@ -1,26 +1,48 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
 import Style from './CSS/profile.module.scss'
+import Image from '../img/IMG_7468.png'
 
 function Profile() {
-    const backBtn = true;
-    const profileBtn = false;
-    const cameraBtn = true;
-    const imageBtn = true;
+    const [visible, setVisible] = useState(false)
+
+    useEffect(() => {
+        let mounted = true
+        var listener = document.addEventListener("scroll", e => {
+            if (mounted) {
+                const scrolled = document.documentElement.scrollTop;
+                if (scrolled > 10){
+                setVisible(true)
+                } 
+                else if (scrolled <= 10){
+                setVisible(false)
+                }
+            }
+        })
+
+        return () => {
+          document.removeEventListener("scroll", listener)
+          mounted = false
+        }
+    }, [visible])
+
 
     return (
         <div>
-            <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
+            <Navbar/>
+            <div className={`${ visible ? Style.iHelperSmall : Style.iHelper}`}>
+                <i className="fas fa-cog fa-2x"></i>
+            </div>
             <div className={Style.wrapper}>
+                <img className={Style.profileImg} src={Image}></img>
                 <div className={Style.profileInfo}>
-                    <h1>JOHN DOE</h1>
+                    <p className={Style.h1}>JOHN DOE</p>
                     <p>johndoe@gmail.com</p>
                 </div>
-                <i className="fas fa-cog fa-4x"></i>
             </div>
             <hr/>
-            <div className={Style.imgWrapper}>
+            <div className={Style.imagesWrapper}>
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
@@ -34,7 +56,7 @@ function Profile() {
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
                 <img src="https://i.imgur.com/lqjy3m1.jpg"></img>
             </div>
-            <Footer cameraBtn={cameraBtn} imageBtn={imageBtn}/>
+            <Footer/>
         </div>
     )
 }
