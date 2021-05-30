@@ -26,7 +26,6 @@ function Home() {
 
     return display ? (
         <div>
-            <Navbar backBtn={backBtn} profileBtn={profileBtn}/>
             <Searchbar />
             <div className={Style.postContainer}>
                 {
@@ -42,7 +41,6 @@ function Home() {
                     )).sort((a, b) => b - a) // Reverse order, so newest posts at top
                 }
             </div>
-            <Footer cameraBtn={cameraBtn} imageBtn={imageBtn}/>
         </div>
     ) : null;
 }

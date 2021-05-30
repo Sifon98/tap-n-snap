@@ -19,7 +19,6 @@ function Post({match}) {
 
     return display ? (
         <div>
-            <Navbar/>
             <div className={Style.wrapper}>
                 <div className={Style.post}>
                     <img src={'/uploads/' + posts.url} alt={posts.tags.join(' ')}/>
@@ -28,7 +27,6 @@ function Post({match}) {
                     <p>{posts.tags.map(tag => '#' + tag).join(' ')}</p>
                 </div>
             </div>
-            <Footer/>
         </div>
     ) : null;
 }

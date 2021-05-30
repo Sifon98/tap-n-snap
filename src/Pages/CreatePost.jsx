@@ -72,7 +72,6 @@ const CreatePost = () => {
 
     return (
         <div>
-        <Navbar />
         <form name="textForm" className={Style.form} onSubmit={uploadPhoto}>
             <div className={Style.wrapper}>
                 {imageData ? <img src={imageData} width="175" /> : <div className={Style.placeholder}><i className="fas fa-user fa-5x"></i></div>}
@@ -97,7 +96,7 @@ const CreatePost = () => {
             <div className={Style.test}>
                 <input type="submit" value="&#xf067;" className={Style.inputButton, Style.inputSubmit} />
             </div>
-            <Link to="/" className={Style.iHelper}>
+            <Link to="/home" className={Style.iHelper}>
                 <i className="fas fa-chevron-left"></i>
             </Link>
         </form>

@@ -7,7 +7,6 @@ function LogOut() {
     <div>
       <br />
       <br />
-        <Navbar />
 
         <h3 className={Style.h31}>Change Name:</h3>
         <h3 className={Style.h3}>Change Email:</h3>

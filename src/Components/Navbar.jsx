@@ -3,7 +3,7 @@ import Style from './CSS/navbar.module.scss'
 import Logo from '../img/logo.png'
 
 const Navbar = () => {
-    const [visible, setVisible] = useState(false)
+    const [size, setSize] = useState(false)
 
     useEffect(() => {
         let mounted = true
@@ -11,10 +11,10 @@ const Navbar = () => {
             if (mounted) {
                 const scrolled = document.documentElement.scrollTop;
                 if (scrolled > 10){
-                setVisible(true)
+                setSize(true)
                 } 
                 else if (scrolled <= 10){
-                setVisible(false)
+                setSize(false)
                 }
             }
         })
@@ -23,10 +23,10 @@ const Navbar = () => {
           document.removeEventListener("scroll", listener)
           mounted = false
         }
-    }, [visible])
+    }, [size])
 
     return (
-        <nav className={`${ visible ? Style.navbarSmall : Style.navbar}`}>
+        <nav className={`${ size ? Style.navbarSmall : Style.navbar}`}>
             <img src={Logo} alt="logo"/>
         </nav>
     )

@@ -39,10 +39,9 @@ function Register() {
        }
 
        return isLoggedIn ? <Redirect to="/" /> : (
-              <div>
+              <div className={Style.wrapper}>
                      <br />
                      <br />
-                     <Navbar />
                      <form onSubmit={uploadUser}>
                             <i className="fas fa-user" ></i>
                             <input type="username" placeholder="  Username..." 

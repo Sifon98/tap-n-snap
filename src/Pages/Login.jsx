@@ -37,9 +37,8 @@ function Login() {
   }
 
   return isLoggedIn ? <Redirect to="/" /> : ( // conditional rendering with react (with ternary operators) <--
-    <div>
+    <div className={Style.wrapper}>
         <br />
-        <Navbar />
         <form onSubmit={login}>
             <i className="fas fa-user" ></i>
             <input type="email"          
