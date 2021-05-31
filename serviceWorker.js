@@ -1,3 +1,5 @@
+import { cloneElement } from "react"
+
 const cacheName = 'v1'
 
 const cacheAssets = [
@@ -45,7 +47,17 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', e => {
   console.log('Service Worker: Fetching')
   e.respondWith(
-    fetch(e.request).catch(() => caches.match(e.request))
+    fetch(e.request)
+    .then(res => {
+      const resClone = res.clone();
+      caches
+        .open(cacheName)
+        .then(cache => {
+          cache.put(e.request, resClone)
+        })
+      return res
+    })
+    .catch(err => caches.match(e.request).then(res => res))
 
   )
 })
