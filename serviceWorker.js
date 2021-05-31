@@ -1,5 +1,3 @@
-import { cloneElement } from "react"
-
 const cacheName = 'v1'
 
 const cacheAssets = [
