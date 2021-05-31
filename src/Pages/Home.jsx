@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import ReactPullToRefresh from 'react-pull-to-refresh'
 
 function Home() {
-
     const [newPosts, setNewPosts] = useState([]); 
     const [display, setDisplay] = useState(null); 
+    const [search, newSearch] = useState('');
     
     const fetchPosts = async () => {
         const res = await fetch('http://localhost:4000/posts');
@@ -19,13 +19,17 @@ function Home() {
 
     useEffect(() => fetchPosts(), [])
 
-    function handleRefresh(resolve, reject) {
+    function handleRefresh() {
         const success = true
         if (success) {
           setTimeout(function(){ window.location.reload(false); }, 700);
         } else {
           console.log("Scroll refresh failed")
         }
+    }
+
+    function test() {
+        console.log(search)
     }
 
     return display ? (
@@ -35,7 +39,7 @@ function Home() {
             style={{
                 textAlign: 'center'
             }}>
-            <Searchbar />
+            <Searchbar search={newSearch} test={test}/>
             <div className={Style.postContainer}>
                 {
                     newPosts.sort((a, b) => a.date > b.date ? -1 : 1).map(post => (

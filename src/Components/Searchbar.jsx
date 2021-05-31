@@ -1,16 +1,19 @@
 import React from 'react'
 import Style from './CSS/searchbar.module.scss'
 
-function Searchbar() {
+function Searchbar({search, test}) {
   return (
     <form className={Style.formSection}>
       <input
+        id="searchPosts"
         type="search"
         className={Style.searchBar}
         placeholder="Search for photos"
+        onChange={e => search(e.target.value)}
+        autoComplete="off"
       ></input>
 
-      <button type="submit" className={Style.submitButton}>
+      <button type="button" className={Style.submitButton} onClick={test}>
         <i className="fa fa-search"></i>
       </button>
     </form>

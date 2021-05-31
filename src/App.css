@@ -9,7 +9,6 @@ body {
 
 .ptr-element {
 	position: absolute;
-	top: 10;
 	left: 0;
 	width: 100%;
 	color: rgb(255, 255, 255);
@@ -129,8 +128,8 @@ body {
 	background-color: #fff;
 	min-height: 100%;
 	z-index: 20;
-	-webkit-backface-visibility: hidden;
-	-webkit-perspective: 1000;
+	/* -webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000; */
 	padding: 20px 20px;
 	text-align: center;
 	font-size: 24px;
@@ -165,8 +164,8 @@ body:not(.ptr-loading) #container .ptr-element {
 	font-size: 16px;
 	vertical-align: top;
 	text-align: center;
-	-moz-transition: color .1s ease-in 0;
-	-webkit-transition: color .1s ease-in 0;
+	/* -moz-transition: color .1s ease-in 0;
+	-webkit-transition: color .1s ease-in 0; */
 	display: inline-block;
 	font-family: "Genericons";
 	font-style: normal;
