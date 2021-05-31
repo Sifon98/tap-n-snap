@@ -80,7 +80,7 @@ const CreatePost = () => {
                 </div>
             </div>
             <div className={Style.tags}>
-                <input id="tagBox" maxLength="15" type="text" placeholder="Enter tags" onChange={e => setNewTag(e.target.value)} value={newTag} />
+                <input id="tagBox" maxLength="15" type="text" placeholder="Enter tags" onChange={e => setNewTag(e.target.value)} value={newTag} autoComplete="off"/>
                 <button type="button" className={Style.icon} onClick={addTag}><i className="fas fa-check"></i></button>
                 <div className={Style.tagDiv}>
                     {
@@ -92,7 +92,7 @@ const CreatePost = () => {
                     }
                 </div>
             </div>
-            <div className={Style.test}>
+            <div className={Style.submit}>
                 <input type="submit" value="&#xf067;" className={Style.inputButton, Style.inputSubmit} />
             </div>
             <Link to="/home" className={Style.iHelper}>
