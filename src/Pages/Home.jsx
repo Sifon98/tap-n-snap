@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 function Home() {
 
     const [newPosts, setNewPosts] = useState([]); 
-    const [display, setDisplay] = useState(null); 
+    const [display, setDisplay] = useState(null);     
     
     const fetchPosts = async () => {
         const res = await fetch('http://localhost:4000/posts');
@@ -21,6 +21,7 @@ function Home() {
     return display ? (
         <div>
             <Searchbar />
+
             <div className={Style.postContainer}>
                 {
                     newPosts.map(post => (

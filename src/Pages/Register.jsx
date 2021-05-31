@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Style from './CSS/register.module.scss'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
+import logoImg from '../img/logo.png'
 
 function Register() {
 
@@ -41,6 +42,7 @@ function Register() {
               <div className={Style.wrapper}>
                      <br />
                      <br />
+                     <img className={Style.img} src={logoImg}></img>
                      <form onSubmit={uploadUser}>
                             <i className="fas fa-user" ></i>
                             <input type="username" placeholder="  Username..." 
