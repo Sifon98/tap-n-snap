@@ -28,18 +28,13 @@ function Home() {
         }
     }
 
-    function test() {
+    function logSearch() {
         console.log(search)
     }
 
     return display ? (
-        <ReactPullToRefresh
-            onRefresh={handleRefresh}
-            className="wrapperRefresh"
-            style={{
-                textAlign: 'center'
-            }}>
-            <Searchbar search={newSearch} test={test}/>
+        <ReactPullToRefresh onRefresh={handleRefresh} className="wrapperRefresh">
+            <Searchbar newSearch={newSearch} logSearch={logSearch}/>
             <div className={Style.postContainer}>
                 {
                     newPosts.sort((a, b) => a.date > b.date ? -1 : 1).map(post => (

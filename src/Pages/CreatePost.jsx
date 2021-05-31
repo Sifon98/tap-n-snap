@@ -92,7 +92,7 @@ const CreatePost = () => {
                     }
                 </div>
             </div>
-            <div className={Style.test}>
+            <div className={Style.submit}>
                 <input type="submit" value="&#xf067;" className={Style.inputButton, Style.inputSubmit} />
             </div>
             <Link to="/home" className={Style.iHelper}>

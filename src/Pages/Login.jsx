@@ -44,7 +44,7 @@ function Login() {
                     placeholder="  Email... " 
                     className={Style.inputl}
                     onChange={e => setEmail(e.target.value)}
-                    autocomplete="off"
+                    autoComplete="off"
             />          
             <br />           
             <i className="fas fa-key" ></i>
