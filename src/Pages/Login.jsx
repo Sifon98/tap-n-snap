@@ -20,9 +20,10 @@ function Login() {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                   },
+                  credentials: 'include',
                   body: JSON.stringify({
-                        email: email,
-                        password: password
+                        email,
+                        password
                   })
           })
           .then(res => res.json())

@@ -22,9 +22,9 @@ function Register() {
                             'Content-Type': 'application/json'
                      },
                      body: JSON.stringify({
-                            name:     userName,
-                            email:    email,
-                            password: password
+                            name: userName,
+                            email,
+                            password
                      })
               })
               .then(res => res.json())
