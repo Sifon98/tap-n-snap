@@ -46,18 +46,22 @@ function Register() {
                      <form onSubmit={uploadUser}>
                             <i className="fas fa-user" ></i>
                             <input type="username" placeholder="  Username..." 
-                                   className={Style.inputr1} onChange={e => setUserName(e.target.value)} />
+                                   className={Style.inputr1} onChange={e => setUserName(e.target.value)} 
+                                   autoComplete="off"/>
                                    <br />
                             <i className="fas fa-envelope"></i>
                             <input type="email" placeholder="  Email..." 
-                                   className={Style.inputr} onChange={e => setEmail(e.target.value)} />       
+                                   className={Style.inputr} onChange={e => setEmail(e.target.value)} 
+                                   autoComplete="off"/>       
                                    <br />
                             <i className="fas fa-key" ></i>      
                             <input type="password" placeholder="  Password..." 
-                                   className={Style.inputr} onChange={e => setPassword(e.target.value)} />
+                                   className={Style.inputr} onChange={e => setPassword(e.target.value)} 
+                                   autoComplete="off"/>
                                    <br />
                             <i className="fas fa-key" ></i>     
-                            <input type="password" placeholder="  Confirm Password..." className={Style.inputr} />
+                            <input type="password" placeholder="  Confirm Password..." className={Style.inputr} 
+                            autoComplete="off"/>
                                    <br />
                             <button type="submit" className={Style.btn}>SIGN UP</button> 
                      </form>       

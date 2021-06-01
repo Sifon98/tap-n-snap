@@ -47,14 +47,16 @@ function Login() {
             <input type="email"          
                     placeholder="  Email... " 
                     className={Style.inputl}
-                    onChange={e => setEmail(e.target.value)} 
+                    onChange={e => setEmail(e.target.value)}
+                    autoComplete="off"
             />          
             <br />           
             <i className="fas fa-key" ></i>
             <input type="password"
                     placeholder="  Password..."
                     className={Style.input}
-                    onChange={e => setPassword(e.target.value)} 
+                    onChange={e => setPassword(e.target.value)}
+                    autoComplete="off"
               />       
             <br />
             <button type="submit" className={Style.btnl}>SIGN IN</button>
