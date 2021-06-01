@@ -30,10 +30,10 @@ function LogOut() {
         <Link to="/login">
             <button className={Style.btnlt} onClick={signOut()}>SIGN OUT</button>
         </Link>
-
         <br />
-
-        <i class="fas fa-chevron-left"></i>
+        <Link to="/profile">
+            <i class="fas fa-chevron-left"></i>        
+        </Link>
       
     </div>
   )

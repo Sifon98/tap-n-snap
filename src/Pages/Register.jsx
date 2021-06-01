@@ -38,7 +38,7 @@ function Register() {
               .catch(error => console.log('ERROR!', error));
        }
 
-       return isLoggedIn ? <Redirect to="/" /> : (
+       return isLoggedIn ? <Redirect to="/home" /> : (
               <div className={Style.wrapper}>
                      <br />
                      <br />
