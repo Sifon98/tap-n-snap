@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Style from './CSS/login.module.scss'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
+import logoImg from '../img/logo.png'
 
 function Login() {
 
@@ -36,9 +37,11 @@ function Login() {
           .catch(error => console.log('ERROR!', error));
   }
 
-  return isLoggedIn ? <Redirect to="/" /> : ( // conditional rendering with react (with ternary operators) <--
+  return isLoggedIn ? <Redirect to="/home" /> : ( // conditional rendering with react (with ternary operators) <--
     <div className={Style.wrapper}>
         <br />
+        <br />
+        <img className={Style.img} src={logoImg}></img>
         <form onSubmit={login}>
             <i className="fas fa-user" ></i>
             <input type="email"          

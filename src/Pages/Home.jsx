@@ -6,6 +6,7 @@ import ReactPullToRefresh from 'react-pull-to-refresh'
 
 function Home() {
     const [newPosts, setNewPosts] = useState([]); 
+
     const [display, setDisplay] = useState(null); 
     const [search, newSearch] = useState('');
     
