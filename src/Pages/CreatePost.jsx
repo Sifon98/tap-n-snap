@@ -7,6 +7,13 @@ const CreatePost = () => {
     // State for Post data
     const [imageData, setImageData] = useState('');
 
+
+    // State for geolocation coordinates
+
+    const [lat, setLat] = useState('');
+    const [long, setLong] = useState(''); 
+    const [message, setMessage] = useState(false);
+
     // Tag states
     const [newTag, setNewTag] = useState('');
     const [tags, setTags] = useState([]);
@@ -23,6 +30,24 @@ const CreatePost = () => {
         }, false);
         reader.readAsDataURL(file);
     }
+
+
+
+ // Get coordinates for location
+    const getLocation =  () => {
+    navigator.geolocation.getCurrentPosition(position => {
+        setLat(position.coords.latitude)
+         setLong(position.coords.longitude)
+    }, err => console.log(err)
+    );
+    console.log(lat, long)
+    }
+    
+    
+    const printLocation =  () => {
+        setMessage(!message)
+    }
+
 
     const uploadPhoto = async e => {
         e.preventDefault();
@@ -52,7 +77,7 @@ const CreatePost = () => {
         if(boxValue == ""){
             console.log(tags);
             return;
-        }else{
+        } else{
             setTags(tags => [...tags, newTag]);
             setNewTag('');
         }
@@ -61,6 +86,7 @@ const CreatePost = () => {
     // Re-render with callback
     useEffect(() => {
         addTag()
+        getLocation()
     }, [tags]);
 
     function removeTag(tagToRemove) {
@@ -77,8 +103,15 @@ const CreatePost = () => {
                 <div className={Style.buttonLayout}>
                     <input type="file" name="file" accept="image/*" onChange={photoChosen} className={Style.inputFile} />
                     <input type="button" value="TAKE PHOTO" className={Style.inputButton} />
+                    
+                    <div className = {Style.getlocation}>
+                        <button onClick={printLocation}>Get Location</button>
+                        {message && <p className = {Style.printLocation}>{lat}, {long}</p>}
+                    </div>
+                    
                 </div>
             </div>
+
             <div className={Style.tags}>
                 <input id="tagBox" maxLength="15" type="text" placeholder="Enter tags" onChange={e => setNewTag(e.target.value)} value={newTag} autoComplete="off"/>
                 <button type="button" className={Style.icon} onClick={addTag}><i className="fas fa-check"></i></button>
