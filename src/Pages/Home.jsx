@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Searchbar from '../Components/Searchbar'
 import Style from './CSS/home.module.scss';
 import { Link } from 'react-router-dom'
-//import ReactPullToRefresh from 'react-pull-to-refresh'
+import ReactPullToRefresh from 'react-pull-to-refresh'
 
 function Home() {
     const [newPosts, setNewPosts] = useState([]); 
