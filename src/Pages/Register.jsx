@@ -3,13 +3,26 @@ import Style from './CSS/register.module.scss'
 import { Redirect } from 'react-router'
 import { Link } from 'react-router-dom'
 import logoImg from '../img/logo.png'
+import DelayLink from 'react-delay-link'
 
 function Register() {
-
        const [isLoggedIn, setIsLoggedIn] = useState(false);
+
        const [userName, setUserName] = useState('');
        const [email, setEmail] = useState('');
        const [password, setPassword] = useState('');
+
+       const [transition, setTransition] = useState(false)
+       const [transitionImg, setTransitionImg] = useState(false)
+
+       const change = () => {
+              setTransition(true)
+       }
+
+       const changeImg = () => {
+              setTransition(true)
+              setTransitionImg(true)
+       }
 
        const uploadUser = async e => {
               e.preventDefault();
@@ -32,7 +45,9 @@ function Register() {
               .then(data => {
               console.log(data.message)
                      if (data.message === 'User Added succesfully!') {
-                            setIsLoggedIn(true);
+                            const timer = setTimeout(() => {
+                                   setIsLoggedIn(true);
+                            }, 700);
                      }
               })
               .catch(error => console.log('ERROR!', error));
@@ -40,35 +55,53 @@ function Register() {
 
        return isLoggedIn ? <Redirect to="/home" /> : (
               <div className={Style.wrapper}>
+                     { transitionImg ? <img className={Style.imgChange} src={logoImg} /> : <img className={Style.img} src={logoImg} />}
+                     {transition ?
+                            <form className={Style.formChange} onSubmit={uploadUser}>
+                                   <div className={Style.inputFieldUser}>
+                                          <i className="fas fa-user" ></i>
+                                          <input type="username" placeholder="  Username..." className={Style.inputUsername} onChange={e => setUserName(e.target.value)} autoComplete="off"/><br />
+                                   </div>
+                                   <div className={Style.inputFieldMail}>
+                                          <i className="fas fa-envelope"></i>
+                                          <input type="email" placeholder="  Email..." className={Style.inputRest} onChange={e => setEmail(e.target.value)} autoComplete="off"/><br />
+                                   </div>
+                                   <div className={Style.inputFieldPass}>
+                                          <i className="fas fa-key" ></i>      
+                                          <input type="password" placeholder="  Password..." className={Style.inputRest} onChange={e => setPassword(e.target.value)} autoComplete="off"/><br />
+                                   </div>
+                                   <div className={Style.inputFieldConPass}>
+                                          <i className="fas fa-key" ></i>     
+                                          <input type="password" placeholder="  Confirm Password..." className={Style.inputRest} autoComplete="off"/><br />
+                                   </div>
+                                   <button type="submit" className={Style.btn} onChange={changeImg}>SIGN UP</button>
+                            </form>
+                            :<form className={Style.form} onSubmit={uploadUser}>
+                                   <div className={Style.inputFieldUser}>
+                                          <i className="fas fa-user" ></i>
+                                          <input type="username" placeholder="  Username..." className={Style.inputUsername} onChange={e => setUserName(e.target.value)} autoComplete="off"/><br />
+                                   </div>
+                                   <div className={Style.inputFieldMail}>
+                                          <i className="fas fa-envelope"></i>
+                                          <input type="email" placeholder="  Email..." className={Style.inputRest} onChange={e => setEmail(e.target.value)} autoComplete="off"/><br />
+                                   </div>
+                                   <div className={Style.inputFieldPass}>
+                                          <i className="fas fa-key" ></i>      
+                                          <input type="password" placeholder="  Password..." className={Style.inputRest} onChange={e => setPassword(e.target.value)} autoComplete="off"/><br />
+                                   </div>
+                                   <div className={Style.inputFieldConPass}>
+                                          <i className="fas fa-key" ></i>     
+                                          <input type="password" placeholder="  Confirm Password..." className={Style.inputRest} autoComplete="off"/><br />
+                                   </div>
+                                   <button type="submit" className={Style.btn} onChange={changeImg}>SIGN UP</button>
+                            </form>
+                     }
                      <br />
-                     <br />
-                     <img className={Style.img} src={logoImg}></img>
-                     <form onSubmit={uploadUser}>
-                            <i className="fas fa-user" ></i>
-                            <input type="username" placeholder="  Username..." 
-                                   className={Style.inputr1} onChange={e => setUserName(e.target.value)} 
-                                   autoComplete="off"/>
-                                   <br />
-                            <i className="fas fa-envelope"></i>
-                            <input type="email" placeholder="  Email..." 
-                                   className={Style.inputr} onChange={e => setEmail(e.target.value)} 
-                                   autoComplete="off"/>       
-                                   <br />
-                            <i className="fas fa-key" ></i>      
-                            <input type="password" placeholder="  Password..." 
-                                   className={Style.inputr} onChange={e => setPassword(e.target.value)} 
-                                   autoComplete="off"/>
-                                   <br />
-                            <i className="fas fa-key" ></i>     
-                            <input type="password" placeholder="  Confirm Password..." className={Style.inputr} 
-                            autoComplete="off"/>
-                                   <br />
-                            <button type="submit" className={Style.btn}>SIGN UP</button> 
-                     </form>       
-                     <br />
-                     <small>Already have an account?</small><Link className={Style.a} to='/login'>Login here</Link>  
-                     
-
+                     { 
+                     transition ? 
+                            <p className={Style.pChange}>Already have an account?<DelayLink delay={700} to='/login'><p className={Style.link} onClick={change}>Sing In</p></DelayLink></p>
+                            :<p className={Style.p}>Already have an account?<DelayLink delay={700} to='/login'><p className={Style.link} onClick={change}>Sing In</p></DelayLink></p>
+                     }
               </div>
        )
 }

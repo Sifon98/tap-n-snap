@@ -27,7 +27,7 @@ function LogOut() {
         <h3 className={Style.h3}>Push notiser</h3>
         <h3 className={Style.h3}>Push notiser</h3>
 
-        <Link to="/login">
+        <Link to="/">
             <button type="button" className={Style.btnlt} onClick={signOut}>SIGN OUT</button>
         </Link>
         <br />

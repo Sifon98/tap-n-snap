@@ -42,9 +42,14 @@ function Home() {
                         <div key={post['_id']} className={Style.wrapper}>
                             <div className={Style.post}>
                                 <Link to={`/Post/${post['_id']}`}><img src={'/uploads/' + post.url} alt={post.tags.join(' ')}/></Link>
-                                <p>User: {post.user}</p>
-                                <p>{post.description}</p>
-                                <p>{post.tags.map(tag => '#' + tag).join(' ')}</p>
+                                <div className={Style.info}>
+                                    <p>{post.user}</p>
+                                    <div className={Style.tagDiv}>
+                                    {
+                                        post.tags.map(tag => <p className={Style.tags}>{tag}</p>)
+                                    }
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     ))
