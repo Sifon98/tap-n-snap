@@ -95,6 +95,8 @@ const CreatePost = () => {
         )
     }
 
+    
+
     return (
         <div>
         <form name="textForm" className={Style.form} onSubmit={uploadPhoto}>
@@ -105,8 +107,8 @@ const CreatePost = () => {
                     <input type="button" value="TAKE PHOTO" className={Style.inputButton} />
                     
                     <div className = {Style.getlocation}>
-                        <button onClick={printLocation}>Get Location</button>
-                        {message && <p className = {Style.printLocation}>{lat}, {long}</p>}
+                      {!message ? <button className = {Style.getLocation} onClick={printLocation}>Get Location</button> : <button >Hide Location</button> }
+                        {message && <p className = {Style.location}>Your coordinates are: {lat}, {long}</p> }
                     </div>
                     
                 </div>
