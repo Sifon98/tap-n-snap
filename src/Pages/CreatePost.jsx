@@ -45,8 +45,13 @@ const CreatePost = () => {
     
     
     const printLocation =  () => {
-        setMessage(!message)
-    }
+        setMessage(true)
+    };
+
+    const removeLocation = () => {
+        setMessage(false)
+    };
+
 
 
     const uploadPhoto = async e => {
@@ -107,7 +112,7 @@ const CreatePost = () => {
                     <input type="button" value="TAKE PHOTO" className={Style.inputButton} />
                     
                     <div className = {Style.getlocation}>
-                      {!message ? <button className = {Style.getLocation} onClick={printLocation}>Get Location</button> : <button >Hide Location</button> }
+                      {message ? <button onClick= {removeLocation} >Hide Location</button> : <button className = {Style.getLocation} onClick={printLocation}>Get Location</button> }
                         {message && <p className = {Style.location}>Your coordinates are: {lat}, {long}</p> }
                     </div>
                     
