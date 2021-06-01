@@ -7,6 +7,8 @@ const CreatePost = () => {
     // State for Post data
     const [imageData, setImageData] = useState('');
 
+    const [name, setName] = useState('');
+
     // Tag states
     const [newTag, setNewTag] = useState('');
     const [tags, setTags] = useState([]);
@@ -24,6 +26,17 @@ const CreatePost = () => {
         reader.readAsDataURL(file);
     }
 
+    const user = async() => {
+        const response = await fetch('http://localhost:4000/user', {
+              headers: {'Content-Type': 'application/json'},
+              credentials: 'include'
+        });
+  
+        const content = await response.json();
+
+        setName(content.name);
+    }
+
     const uploadPhoto = async e => {
         e.preventDefault();
         // If no photo chosen do nothing
@@ -37,7 +50,7 @@ const CreatePost = () => {
             },
             body: JSON.stringify({
                 url: imageData,
-                user: "User123", // <-- temporary user
+                user: name, // <-- temporary user
                 description: "DESCRIPTION NOT NEEDED", // <-- description should be removed from backend 
                 tags: tags
             })
@@ -61,6 +74,7 @@ const CreatePost = () => {
     // Re-render with callback
     useEffect(() => {
         addTag()
+        user()
     }, [tags]);
 
     function removeTag(tagToRemove) {
