@@ -45,9 +45,9 @@ function Login() {
       setCorrectDetails(true);
       if (data.message === 'Login Succesful!') {
         setCorrectDetails(false);
+        setTransition(true)
+        setTransitionImg(true)
         const timer = setTimeout(() => {
-          setTransition(true)
-          setTransitionImg(true)
           setIsLoggedIn(true)
         }, 700);
       }

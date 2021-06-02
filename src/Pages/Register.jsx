@@ -48,9 +48,9 @@ function Register() {
                      console.log(data.message)
                      setError(false) 
                      if (data.message === 'User Added succesfully!') {
+                            setTransition(true)
+                            setTransitionImg(true)
                             const timer = setTimeout(() => {
-                                   setTransition(true)
-                                   setTransitionImg(true)
                                    setIsLoggedIn(true);
                             }, 700);
                      }
