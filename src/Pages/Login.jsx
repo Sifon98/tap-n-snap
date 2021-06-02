@@ -73,7 +73,6 @@ function Login() {
               <i className="fas fa-key" />
               <input type="password" placeholder="Password..." className={Style.inputPassword} onChange={e => setPassword(e.target.value)} autoComplete="off"/>
             </div>
-            { transition ? <p>Wrong email or password</p> : null }
             <button type="submit" className={Style.btn} >SIGN IN</button>
           </form>
           :<form className={Style.form} onSubmit={login}>

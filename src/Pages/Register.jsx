@@ -68,7 +68,7 @@ function Register() {
                             <form className={Style.formChange} onSubmit={uploadUser}>
                                    <div className={Style.inputFieldUser}>
                                           <i className="fas fa-user" ></i>
-                                          <input type="username" placeholder="  Username..." className={Style.inputUsername} 
+                                          <input type="username" placeholder="Username..." className={Style.inputUsername} 
                                           onChange={e => setUserName(e.target.value)} autoComplete="off"/><br />
                                    </div>
                                    <div className={Style.inputFieldMail}>
