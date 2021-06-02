@@ -14,7 +14,6 @@ function Home() {
         const res = await fetch('http://localhost:4000/posts');
         const data = await res.json();
 
-        console.log(data)
         setNewPosts(data);
         setDisplay(true);
     }

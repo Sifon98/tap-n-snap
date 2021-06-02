@@ -10,9 +10,8 @@ const PostSchema = Schema({
     type: String,
     required: true
   },
-  description: {
-    type: String,
-    // required: true
+  location: {
+    type: String
   },
   date: {
     type: Date,
