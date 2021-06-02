@@ -99,8 +99,8 @@ function Register() {
                      <br />
                      { 
                      transition ? 
-                            <p className={Style.pChange}>Already have an account?<DelayLink delay={700} to='/login'><p className={Style.link} onClick={change}>Sing In</p></DelayLink></p>
-                            :<p className={Style.p}>Already have an account?<DelayLink delay={700} to='/login'><p className={Style.link} onClick={change}>Sing In</p></DelayLink></p>
+                            <h4 className={Style.pChange}>Already have an account?<DelayLink delay={700} to='/login'><p className={Style.link} onClick={change}>Sing In</p></DelayLink></h4>
+                            :<h4 className={Style.p}>Already have an account?<DelayLink delay={700} to='/login'><p className={Style.link} onClick={change}>Sing In</p></DelayLink></h4>
                      }
               </div>
        )

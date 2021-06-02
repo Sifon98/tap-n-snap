@@ -46,7 +46,7 @@ function Home() {
                                     <p>{post.user}</p>
                                     <div className={Style.tagDiv}>
                                     {
-                                        post.tags.map(tag => <p className={Style.tags}>{tag}</p>)
+                                        post.tags.map(tag => <p key={post + Math.random()} className={Style.tags}>{tag}</p>)
                                     }
                                     </div>
                                 </div>
