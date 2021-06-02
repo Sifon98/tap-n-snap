@@ -48,6 +48,7 @@ $backgroundColor: #21262E;
             max-width: 100%;
             min-height: 150px;
             overflow: hidden;
+            margin-bottom: 5px;
 
             .inputButton {
                 font-family: $fontFamily;
@@ -80,8 +81,24 @@ $backgroundColor: #21262E;
             .inputFile[type=file] {
                 color: $darkAccent;
             }
+
+            .getLocation {
+                font-family: $fontFamily;
+                font-size: $fontSize;
+                width: 140px;
+                height: 50px;
+                border-radius: 100px;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                color: white;
+                background-color: #A371F7;
+            }
         }
     }
+
+
 
     .tags {
         padding-top: 20px;
