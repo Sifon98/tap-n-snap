@@ -68,7 +68,7 @@ function Profile() {
         <hr/> 
         <div className={Style.imagesWrapper}> 
             {
-                userPosts.map(post => ( post == null ? null : <img key={post + Math.random()} src={`../../public/uploads/${post}`} /> )) 
+                userPosts.map(post => ( post == null ? null : <img key={post + Math.random()} src={`/uploads/${post}`} /> )) 
             }
         </div> 
     </div> 

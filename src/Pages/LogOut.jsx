@@ -2,6 +2,7 @@ import React from 'react'
 import Style from './CSS/logOut.module.scss'
 import { Link } from 'react-router-dom'
 import logoImg from '../img/logo.png'
+import DelayLink from 'react-delay-link'
 
 function LogOut() {
       
@@ -25,9 +26,9 @@ function LogOut() {
         <Link to="/profile">
             <button type="button" className={Style.btnTop} onClick={signOut}>SAVE</button>
         </Link>
-        <Link to="/">
+        <DelayLink delay={10} to="/">
             <button type="button" className={Style.btnBot} onClick={signOut}>SIGN OUT</button>
-        </Link>
+        </DelayLink>
         <br />
         <Link to="/profile">
             <i className="fas fa-chevron-left"></i>        
