@@ -43,6 +43,8 @@ self.addEventListener('activate', (e) => {
 })
 
 self.addEventListener('fetch', e => {
+  if (!(e.request.url.indexOf('http') === 0)) return;
+
   console.log('Service Worker: Fetching')
   e.respondWith(
     fetch(e.request)
