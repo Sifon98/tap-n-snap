@@ -13,6 +13,7 @@ const CreatePost = () => {
     const [long, setLong] = useState(''); 
     const [message, setMessage] = useState(false);
     const [name, setName] = useState('');
+    const [location, setLocation] = useState([]); 
 
     // Tag states
     const [newTag, setNewTag] = useState('');
@@ -40,7 +41,7 @@ const CreatePost = () => {
     );
     console.log(lat, long)
     }
-    
+
     
     const printLocation =  () => {
         setMessage(true)
@@ -49,6 +50,16 @@ const CreatePost = () => {
     const removeLocation = () => {
         setMessage(false)
     };
+
+    const fetchLocation = async () => {
+        const response = await fetch('https://maps.googleapis.com/maps/api/geocode/json?latlng=' +`${lat},${long}` + '&result_type=locality&key=AIzaSyBzpTdrJHHqA12vSEEGI-vvtn85FEC94hs')
+        const data = await response.json();
+        await setLocation(data['results'])
+
+        console.log(location)
+    }
+
+
 
     const user = async() => {
         const response = await fetch('http://localhost:4000/user', {
@@ -98,9 +109,13 @@ const CreatePost = () => {
     // Re-render with callback
     useEffect(() => {
         addTag()
-        getLocation()
         user()
     }, [tags]);
+
+    useEffect(() => {
+        getLocation()
+        fetchLocation()
+    }, [long]);
 
     function removeTag(tagToRemove) {
         setTags(tags => (
@@ -120,9 +135,12 @@ const CreatePost = () => {
                     <input type="button" value="TAKE PHOTO" className={Style.inputButton} />
                     
                     <div className = {Style.getlocation}>
-                      {message ? <button onClick= {removeLocation} >Hide Location</button> : <button className = {Style.getLocation} onClick={printLocation}>Get Location</button> }
-                        {message && <p className = {Style.location}>Your coordinates are: {lat}, {long}</p> }
+                      {message ? <button onClick= {removeLocation} >Hide Location</button> : <button className = {Style.getLocation} onClick={fetchLocation} onClick={printLocation} >Get Location</button>}
+                        {message && <p className = {Style.location}>Your location is: {lat}, {long}</p> }
                     </div>
+                    {
+                        location.map(location => <p key={location + Math.random()} >{location.formatted_address}</p>)
+                    }
                     
                 </div>
             </div>
