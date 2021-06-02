@@ -27,12 +27,12 @@ function LogOut() {
         <h3 className={Style.h3}>Push notiser</h3>
         <h3 className={Style.h3}>Push notiser</h3>
 
-        <Link to="/login">
-            <button className={Style.btnlt} onClick={signOut()}>SIGN OUT</button>
+        <Link to="/">
+            <button type="button" className={Style.btnlt} onClick={signOut}>SIGN OUT</button>
         </Link>
         <br />
         <Link to="/profile">
-            <i class="fas fa-chevron-left"></i>        
+            <i className="fas fa-chevron-left"></i>        
         </Link>
       
     </div>

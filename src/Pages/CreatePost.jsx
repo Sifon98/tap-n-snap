@@ -9,10 +9,10 @@ const CreatePost = () => {
 
 
     // State for geolocation coordinates
-
     const [lat, setLat] = useState('');
     const [long, setLong] = useState(''); 
     const [message, setMessage] = useState(false);
+    const [name, setName] = useState('');
 
     // Tag states
     const [newTag, setNewTag] = useState('');
@@ -30,8 +30,6 @@ const CreatePost = () => {
         }, false);
         reader.readAsDataURL(file);
     }
-
-
 
  // Get coordinates for location
     const getLocation =  () => {
@@ -52,7 +50,16 @@ const CreatePost = () => {
         setMessage(false)
     };
 
+    const user = async() => {
+        const response = await fetch('http://localhost:4000/user', {
+              headers: {'Content-Type': 'application/json'},
+              credentials: 'include'
+        });
+  
+        const content = await response.json();
 
+        setName(content.name);
+    }
 
     const uploadPhoto = async e => {
         e.preventDefault();
@@ -67,7 +74,7 @@ const CreatePost = () => {
             },
             body: JSON.stringify({
                 url: imageData,
-                user: "User123", // <-- temporary user
+                user: name, // <-- temporary user
                 description: "DESCRIPTION NOT NEEDED", // <-- description should be removed from backend 
                 tags: tags
             })
@@ -92,6 +99,7 @@ const CreatePost = () => {
     useEffect(() => {
         addTag()
         getLocation()
+        user()
     }, [tags]);
 
     function removeTag(tagToRemove) {
