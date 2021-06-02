@@ -155,6 +155,12 @@
                 animation: opacity 2s ease-in-out;
             }
         }
+
+        .error {
+            position: absolute;
+            top: 60%;
+            color: red;
+        }
     
         .btn{
             position: absolute;
