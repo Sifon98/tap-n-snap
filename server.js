@@ -21,6 +21,9 @@ app.use('/', AuthRoute)
 const postRouter = require('./backend/routes/posts')
 app.use('/posts', postRouter)
 
+const userRouter = require('./backend/routes/users')
+app.use('/users', userRouter)
+
 // Connect to DB
 mongoose.connect(
   'mongodb+srv://admin:pa55w0rd@cluster0.cmulc.mongodb.net/Cluster0?retryWrites=true&w=majority',
